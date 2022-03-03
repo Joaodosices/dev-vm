@@ -1,0 +1,51 @@
+{
+	"eula": "",
+	"vendor": "Girish_Lakhani",
+	"license": "",
+	"id": "com.sap.sac.sample.linearea.prepared",
+	"version": "7.7.7",
+	"name": "LA_EC",
+	"newInstancePrefix": "LineArea",
+	"description": "LA_EC",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "com-sap-sample-linearea-prepared",
+			"url": "https://sac-dev-cw.novartis.net/cw/dev/SACLineAreaChart/LA_ErisionCurve.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
+	],
+	"properties": {
+		"width": {
+			"type": "integer",
+			"default": 600
+		},
+		"height": {
+			"type": "integer",
+			"default": 420
+		}
+	},
+	"methods": {
+		"render": {
+			"description": "Render",
+			"parameters": [
+				{
+					"name": "resultSet",
+					"type": "any",
+					"description": "The json"
+				},
+				{
+					"name": "Col_Count",
+					"type": "integer",
+					"description": "Column in resultset"
+				}
+			]
+		}
+	},
+	"events": {
+		"onClick": {
+			"description": "Called when the user clicks the Box."
+		}
+	}
+}
