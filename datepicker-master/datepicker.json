@@ -1,0 +1,130 @@
+{
+	"name": "Datepicker",
+	"description": "The Datepicker Custom Widget provides a sophisticated input field for date values and date ranges. The date formatting is customizable and a dark mode is provided.",
+	"newInstancePrefix": "Datepicker",
+	"eula": "",
+	"vendor": "Girish Lakhani",
+	"license": "",
+	"id": "nkappler.datepicker",
+	"version": "1.1.1",
+	"icon": "https://sac-dev-cw.novartis.net/cw/dev/datepicker-master/calendarBlue.svg",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "nkappler-date-picker",
+			"url": "https://sac-dev-cw.novartis.net/cw/dev/datepicker-master/webcomponent.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		},
+		{
+			"kind": "styling",
+			"tag": "nkappler-datepicker-aps",
+			"url": "https://sac-dev-cw.novartis.net/cw/dev/datepicker-master/aps_webcomponent.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
+	],
+	"properties": {
+		"dateVal": {
+			"type": "Date",
+			"description": "default date"
+		},
+		"secondDateVal": {
+			"type": "Date",
+			"description": "default date"
+		},
+		"format": {
+			"type": "string",
+			"description": "date format",
+			"default": ""
+		},
+		"width": {
+			"type": "integer",
+			"default": 200
+		},
+		"height": {
+			"type": "integer",
+			"default": 48
+		},
+		"darktheme": {
+			"type": "boolean",
+			"default": false
+		},
+		"enablerange": {
+			"type": "boolean",
+			"default": false
+		},
+		"range_start": {
+			"type": "Date",
+			"description": "default date"
+		},
+		"range_end": {
+			"type": "Date",
+			"description": "default date"
+		}
+
+	},
+	"methods": {
+		"getDateVal": {
+			"returnType": "Date",
+			"description": "get the date. (start date if range selection is enabled)",
+			"parameters": [],
+			"body": "return this.dateVal;"
+		},
+		"setDateVal": {
+			"description": "set the date. (start date if range selection is enabled)",
+			"parameters": [
+				{
+					"name": "dv",
+					"type": "Date",
+					"description": "The new date"
+				}
+			],
+			"body": "this.dateVal = dv;"
+		},
+		"setDateRange": {
+			"description": "set the date Range of the widget. (start date - end date)",
+			"parameters": [
+				{
+					"name": "rsd",
+					"type": "Date",
+					"description": ""
+				},
+				{
+					"name": "red",
+					"type": "Date",
+					"description": ""
+				}
+			],
+			"body": "this.range_start = rsd; this.range_end = red;"
+		},
+		"getSecondDateVal": {
+			"returnType": "Date",
+			"description": "get the end date. (returns undefined if range selection is not enabled)",
+			"parameters": [],
+			"body": " var x = new Date(); x = undefined; if (this.enablerange) { return this.secondDateVal; } else { return x; }"
+		},
+		"setSecondDateVal": {
+			"description": "set the end date. (has no effect if range selection is not enabled)",
+			"parameters": [
+				{
+					"name": "dv",
+					"type": "Date",
+					"description": "The new date"
+				}
+			],
+			"body": "this.secondDateVal = dv;"
+		},
+		"isRangeEnabled": {
+			"description": "Returns whether range selection is enabled",
+			"parameters": [],
+			"body": "return this.enablerange;",
+			"returnType": "boolean"
+		}
+	},
+	"events": {
+		"onChange": {
+			"description": "Called when the user changes the selected date."
+		}
+	}
+}
