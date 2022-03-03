@@ -1,0 +1,92 @@
+{
+  "id": "com.saccustomwidgets.utils.mouseover3",
+  "version": "1.0.0",
+  "name": "Mouse Over",
+  "description": "Mouseover when running application",
+  "newInstancePrefix": "MouseOver",
+  "icon": "",
+  "vendor": "Marcin Poniewierski",
+  "eula": "",
+  "license": "",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-novartis-utils-mouseover",
+      "url": "https://sac-dev-cw.novartis.net/cw/dev/mouseover/mouseover3.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    },
+    {
+      "kind": "builder",
+      "tag": "com-novartis-utils-mouseover-builder",
+      "url": "https://sac-dev-cw.novartis.net/cw/dev/mouseover/mouseover3.builder.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "hgt": {
+      "type": "number",
+      "description": "height of the widget",
+      "default": 5
+    },
+    "wdh": {
+      "type": "number",
+      "description": "width of the widget",
+      "default": 100
+    },
+    "left": {
+      "type": "number",
+      "description": "left alignment the widget",
+      "default": 0
+    },
+    "top": {
+      "type": "number",
+      "description": "top alignment of the widget",
+      "default": 0
+    },
+    "showHand": {
+      "type": "boolean",
+      "description": "show hand when mouseover",
+      "default": true
+    },
+    "showActive": {
+      "type": "boolean",
+      "description": "show active part of widget",
+      "default": false
+    }
+  },
+  "methods": {
+    "setWidth": {
+      "parameters": [
+        {
+          "name": "width",
+          "type": "number",
+          "description": "width of the widget"
+        }
+      ],
+      "description": "sets width of the widget"
+    },
+    "setHeight": {
+      "parameters": [
+        {
+          "name": "height",
+          "type": "number",
+          "description": "height of the widget"
+        }
+      ],
+      "description": "sets height of the widget"
+    }
+  },
+  "events": {
+    "onMouseOver": {
+      "description": "called when mouse is over the element"
+    },
+    "onMouseLeave": {
+      "description": "called when mouse leaves the element"
+    },
+    "onClick": {
+      "description": "called when element is clicked"
+    }
+  }
+}
