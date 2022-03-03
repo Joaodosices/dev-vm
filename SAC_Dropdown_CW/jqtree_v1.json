@@ -1,0 +1,41 @@
+{
+    "id": "com.DS.DSDS.sap.sac.jqtree",
+    "version": "1.1.1",
+    "name": "jqtv1",
+    "description": "jqtv1",
+    "newInstancePrefix": "jqtv1",
+    "vendor": "Darshan Savani",
+    "eula": "",
+    "license": "",
+    "imports": [ "input-controls" ],
+    "webcomponents": [
+      {
+        "kind": "main",
+        "tag": "com-ds-dsds-sap-sac-jqtree",
+        "url": "https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/jqtree_v1.js",
+        "integrity": "",
+        "ignoreIntegrity": true
+      }
+    ],
+    "properties": {
+        "width": {
+            "type": "integer",
+            "default": 600
+        },
+        "height": {
+            "type": "integer",
+            "default": 420
+        }
+  },
+  "methods": {
+    "render":{
+      "description": "Render",
+      "parameters":[]
+    }
+  },
+  "events": {
+    "onClick": {
+      "description": "Called when the user clicks the Box."
+    }
+  }
+}

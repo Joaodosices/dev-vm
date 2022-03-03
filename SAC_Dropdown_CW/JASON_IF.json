@@ -1,0 +1,19 @@
+<fieldset style="width:100%;">
+<legend><h3>Field Mapping Properties</h3></legend>
+<table >
+<tr>
+<td> Field-1  </td>
+<td style = "padding-left:137px;">
+<input  type="text" id="FL1" class="form-control" />
+</td>
+</tr>
+
+<tr>
+<td> Field-2 </td>
+<td style = "padding-left:137px;">
+<input  type="text" id="FL2" class="form-control" />
+</td>
+</tr>
+</table>
+
+</fieldset>

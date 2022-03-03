@@ -1,0 +1,177 @@
+{
+    "id": "com.DS.FINAL.sap.sac.multiinput",
+    "version": "0.0.1",
+    "name": "Final Dropdown",
+    "description": "Final Dropdown",
+    "newInstancePrefix": "Final_Dropdown",
+    "vendor": "Darshan Savani",
+    "eula": "",
+    "license": "",
+    "imports": [
+      "input-controls"
+    ],
+    "webcomponents": [
+      {
+        "kind": "main",
+        "tag": "com-ds-final-sap-sac-alive",
+        "url": "https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/Final_Dropdown.js",
+        "integrity": "",
+        "ignoreIntegrity": true
+      }
+    ],
+    "properties": {
+
+      "unit": {
+        "type": "string[]",
+        "description": "unit",
+        "default": []
+      },
+       "itemdec": {
+        "type": "string[]",
+        "description": "itemDec",
+        "default": []
+      },
+
+      "item": {
+        "type": "string[]",
+        "description": "item",
+        "default": []
+      },
+      "footer": {
+        "type": "any",
+        "description": "footer",
+        "default": ""
+      },
+
+      "setmode": {
+        "type": "any",
+        "description": "mode",
+        "default": ""
+      },
+
+      "filterInfo": {
+        "type": "any",
+        "description": "Filter Information",
+        "default": ""
+      },
+      "default": {
+        "type": "any",
+        "description": "default Selection",
+        "default": ""
+      },
+      "widgetno": {
+        "type": "integer",
+        "description": "Widget No",
+        "default": 0
+      },
+      "pnodename": {
+        "type": "string[]",
+        "description": "parent nodename",
+        "default": []
+      },
+      "ColName": {
+        "type": "string",
+        "description":"Column Name",
+        "default": ""
+      },
+      "level": {
+        "type": "string[]",
+        "description": "",
+        "default": []
+      },
+      "parentid": {
+        "type": "string[]",
+        "description": "",
+        "default": []
+      },
+      "nodeid": {
+        "type": "string[]",
+        "description": "",
+        "default": []
+      },
+      "bu": {
+        "type": "string[]",
+        "description": "",
+        "default": []
+      },
+      "granularity": {
+        "type": "string[]",
+        "description": "",
+        "default": []
+      }
+
+    },
+    "methods": {
+      "getSelectedItem": {
+        "returnType": "string[]",
+        "description": "Get Selected Items",
+        "parameters": [],
+        "body": "return this.unit;"
+      },
+      "getSelectednode": {
+        "returnType": "string[]",
+        "description": "Get Selected Items",
+        "parameters": [],
+        "body": "return this.item;"
+      },
+      "getSelectedNodeDec": {
+        "returnType": "string[]",
+        "description": "Get Selected Node Dec",
+        "parameters": [],
+        "body": "return this.itemdec;"
+      },
+      "getParent": {
+        "returnType": "string[]",
+        "description": "Return Parent Nodename for Node",
+        "parameters": [],
+        "body": "return this.pnodename;"
+      },
+      "getColumnValue": {
+        "returnType": "string[]",
+        "description": "Return Col Value for Node",
+        "parameters": [
+          {
+            "name": "ColName",
+            "type": "string",
+            "description": "Set Column Name"            
+          }
+        ],
+        "body": "if(ColName === 'LEVEL'){return this.level;}else if(ColName === 'BU'){return this.bu;}else if(ColName === 'PARENTID'){return this.parentid;}else if(ColName === 'NODEID'){return this.nodeid;}else if(ColName === 'GRANULARITY'){return this.granularity;}"
+      },
+
+      "setData": {
+        "description": "Set Dataset",
+        "parameters": [
+          {
+            "name": "value",
+            "type": "any",
+            "description": "The new footer"
+          },
+          {
+            "name": "widgetno",
+            "type": "integer",
+            "description": "WidgetNo"
+          },
+          {
+            "name": "modename",
+            "type": "any",
+            "description": "selection mode"
+          },
+          {
+            "name": "defaultselection",
+            "type": "any",
+            "description": "set default selection"
+          }
+        ],
+        "body": "this.footer = value; this.setmode = modename; this.default = defaultselection; this.widgetno = widgetno;"
+      }
+    },
+    "events": {
+      "onStart": {
+        "description": "Specify the SAC Script that shall be triggered when the Export process is started."
+      },
+      "onClick": {
+        "description": "Called when the user clicks the Dropdown."
+      }
+    }
+  }

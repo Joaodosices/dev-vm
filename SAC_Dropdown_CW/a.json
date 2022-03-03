@@ -1,0 +1,60 @@
+{
+    "id": "com.DS.DSDS.sap.sac.multiinput",
+    "version": "3.3.3",
+    "name": "Dropdown_a",
+    "description": "Dropdown",
+    "newInstancePrefix": "Dropdown",
+    "vendor": "Darshan Savani",
+    "eula": "",
+    "license": "",
+    "imports": [ "input-controls" ],
+    "webcomponents": [
+      {
+        "kind": "main",
+        "tag": "com-ds-dsds-sap-sac-alive",
+        "url": "https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/a.js",
+        "integrity": "",
+        "ignoreIntegrity": true
+      }
+    ],
+    "properties": {
+      "selectedNode": {
+        "type": "string",
+        "description": "Selection Node & Child",
+        "default": ""
+      },
+      "dataset": {
+        "type": "any",
+        "description": "footer",
+        "default": ""
+      }
+    },
+    "methods": {
+      "getSelection": {
+        "returnType": "string",
+        "description": "Get Selection",
+        "parameters": [],
+        "body": "return this.selectedNode;"
+      },
+      "setData": {
+        "description": "Set Dataset",
+        "parameters": [
+          {
+            "name": "value",
+            "type": "any",
+            "description": "Dataset"
+          }
+        ],
+        "body": "this.dataset = value;"
+      }
+    },
+    "events": {
+        "onStart": {
+        "description": "Specify the SAC Script that shall be triggered when the Export process is started."
+      },
+        "onClick": {
+            "description": "Called when the user clicks the Box."
+        }
+    
+    }
+  }

@@ -1,0 +1,247 @@
+{
+  "id": "com.DS.FINALV3.sap.sac.multiinput",
+  "version": "0.0.3",
+  "name": "Final Dropdown V3",
+  "description": "Final Dropdown V3",
+  "newInstancePrefix": "Final_Dropdown_V3",
+  "vendor": "Darshan Savani",
+  "eula": "",
+  "license": "",
+  "imports": [
+    "input-controls"
+  ],
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-ds-finalv3-sap-sac-alive",
+      "url": "https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/Final_Dropdown_V3.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    },
+    {
+      "kind": "builder",
+      "tag": "com-ds-finalv3-sap-sac-alive-builder",
+      "url": "https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/Final_Dropdown_V3_Builder_1.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    },
+    {
+      "kind": "styling",
+      "tag": "com-ds-finalv3-sap-sac-alive-styling",
+      "url": "https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/Final_Dropdown_V3_Styling.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "Selection_Type": {
+      "type": "string",
+      "description": "Set a Selection Type",
+      "default": "SingleSelectLeft"
+    },
+    "Display": {
+      "type": "string",
+      "description": "ID, DEC, ID-DEC",
+      "default": "text"
+    },
+    
+    "LEVEL_col": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+    "PARENTID_col": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+    "NODEID_col": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+    "TEXTID_col": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+    "TEXTDEC_col": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+
+    "Field1_Name": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+    "Field2_Name": {
+      "type": "string",
+      "description": " ",
+      "default": ""
+    },
+    "Field1_Value": {
+      "type": "string[]",
+      "description": "",
+      "default": []
+    },
+    "Field2_Value": {
+      "type": "string[]",
+      "description": " ",
+      "default": []
+    },
+    "Show_Display": {
+      "type": "string",
+      "description": "",
+      "default": "No"
+    },
+    "Separator": {
+      "type": "string",
+      "description": "",
+      "default": " "
+    },
+    "fstyle": {
+      "type": "string",
+      "description": "",
+      "default": " "
+    },
+    "fsize": {
+      "type": "integer",
+      "description": "",
+      "default": 12
+    },
+    "fcolor": {
+      "type": "string",
+      "description": "",
+      "default": " "
+    },
+    "fbi": {
+      "type": "string",
+      "description": "",
+      "default": " "
+    },
+
+    "SelectedChild": {
+      "type": "string[]",
+      "description": "SelectedChild",
+      "default": []
+    },
+    "SelectedNodeDec": {
+      "type": "string[]",
+      "description": "SelectedNodeDec",
+      "default": []
+    },
+    "SelectedNodeId": {
+      "type": "string[]",
+      "description": "SelectedNodeId",
+      "default": []
+    },
+    "return": {
+      "type": "string[]",
+      "description": "return",
+      "default": []
+    },
+    "setdata": {
+      "type": "any",
+      "description": "setdata",
+      "default": ""
+    },
+    "filterInfo": {
+      "type": "any",
+      "description": "Filter Information",
+      "default": ""
+    },
+    "default": {
+      "type": "any",
+      "description": "default Selection",
+      "default": ""
+    },
+    "widgetno": {
+      "type": "integer",
+      "description": "Widget No",
+      "default": 0
+    },
+    "ptid": {
+      "type": "string[]",
+      "description": "parent nodename",
+      "default": []
+    },
+    "ptdec": {
+      "type": "string[]",
+      "description": "parent nodename",
+      "default": []
+    }
+
+  },
+  "methods": {
+    "getSelectedChild": {
+      "returnType": "string[]",
+      "description": "Get Selected Childs",
+      "parameters": [],
+      "body": "return this.SelectedChild;"
+    },
+    "getSelectedNodeId": {
+      "returnType": "string[]",
+      "description": "Get Selected Nodes",
+      "parameters": [],
+      "body": "return this.SelectedNodeId;"
+    },
+    "getSelectedNodeDec": {
+      "returnType": "string[]",
+      "description": "Get Selected Node Dec",
+      "parameters": [],
+      "body": "return this.SelectedNodeDec;"
+    },
+    "getParent": {
+      "returnType": "string[]",
+      "description": "Return Parent Nodename for Node",
+      "parameters": [
+        {
+          "name": "IDorDEC",
+          "type": "string",
+          "description": "get parent ID or DEC"            
+        }
+      ],
+      "body": "if(IDorDEC === 'ID'){return this.ptid;}else if(IDorDEC === 'DEC'){return this.ptdec;}"
+    },
+    "getColumnValue": {
+      "returnType": "string[]",
+      "description": "Get Return Data",
+      "parameters": [
+        {
+          "name": "FieldName",
+          "type": "string",
+          "description": "Set FieldName"
+        }
+      ],
+      "body": "if(this.Field1_Name === FieldName){return this.Field1_Value;}else if(this.Field2_Name === FieldName){return this.Field2_Value;}"
+    },
+    "setData": {
+      "description": "Set Dataset",
+      "parameters": [
+        {
+          "name": "resultset",
+          "type": "any",
+          "description": "Set Data ResultSet"
+        },
+        {
+          "name": "widgetno",
+          "type": "integer",
+          "description": "WidgetNo"
+        },
+        {
+          "name": "defaultselection",
+          "type": "any",
+          "description": "set default selection"
+        }
+      ],
+      "body": "this.setdata = resultset; this.default = defaultselection; this.widgetno = widgetno; "
+    }
+  },
+  "events": {
+    "onClick": {
+      "description": "Called when the user clicks the Hierarchy Custom-Widget"
+    }
+  }
+}

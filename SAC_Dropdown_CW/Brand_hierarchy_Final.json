@@ -1,0 +1,71 @@
+{
+  "id": "com.DS.DSDS.sap.sac.multiinput",
+  "version": "3.3.3",
+  "name": "Dropdown_Brand",
+  "description": "Dropdown for Brand",
+  "newInstancePrefix": "Dropdown_Brand",
+  "vendor": "Darshan Savani",
+  "eula": "",
+  "license": "",
+  "imports": [ "input-controls" ],
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-ds-dsds-sap-sac-alive",
+      "url": "https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/Brand_hierarchy_Final.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "unit": {
+      "type": "string[]",
+      "description": "unit",
+      "default": []
+    },
+    "footer": {
+      "type": "any",
+      "description": "footer",
+      "default": ""
+    }
+  },
+  "methods": {
+    "getSelectedItem": {
+      "returnType": "string[]",
+      "description": "Get Selected Items",
+      "parameters": [],
+      "body": "return this.unit;"
+    },
+    "setUnit": {
+      "description": "setSelectedItem",
+      "parameters": [
+        {
+          "name": "value",
+          "type": "string[]",
+          "description": "Set Selected Items"
+        }
+      ],
+      "body": "this.unit = value;"
+    },
+    "setData": {
+      "description": "Set Dataset",
+      "parameters": [
+        {
+          "name": "value",
+          "type": "any",
+          "description": "Set DataSet"
+        }
+      ],
+      "body": "this.footer = value;"
+    }
+  },
+  "events": {
+      "onStart": {
+      "description": "Specify the SAC Script that shall be triggered when the Export process is started."
+    },
+      "onClick": {
+          "description": "Called when the user clicks the Box."
+      }
+  
+  }
+}

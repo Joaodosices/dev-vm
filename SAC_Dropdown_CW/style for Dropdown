@@ -1,0 +1,10 @@
+/////// - style panle
+
+<style> .color{background-color : white !important;}</style>
+
+/////// - class
+
+ oNode.addStyleClass('color');
+
+
+

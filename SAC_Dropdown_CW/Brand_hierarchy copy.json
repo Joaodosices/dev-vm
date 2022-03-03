@@ -1,0 +1,71 @@
+{
+    "id": "com.DS.DSDS.sap.sac.multiinput",
+    "version": "7.7.7",
+    "name": "Dropdown_Copy",
+    "description": "Dropdown",
+    "newInstancePrefix": "Dropdown",
+    "vendor": "Darshan Savani",
+    "eula": "",
+    "license": "",
+    "imports": [ "input-controls" ],
+    "webcomponents": [
+      {
+        "kind": "main",
+        "tag": "com-ds-dsds-sap-sac-live",
+        "url": "https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/Brand_hierarchy_Live_Copy.js",
+        "integrity": "",
+        "ignoreIntegrity": true
+      }
+    ],
+    "properties": {
+      "unit": {
+        "type": "string",
+        "description": "unit",
+        "default": ""
+      },
+      "footer": {
+        "type": "any",
+        "description": "footer",
+        "default": ""
+      }
+    },
+    "methods": {
+      "getUnit": {
+        "returnType": "string",
+        "description": "Get unit",
+        "parameters": [],
+        "body": "return this.unit;"
+      },
+      "setUnit": {
+        "description": "Set unit",
+        "parameters": [
+          {
+            "name": "value",
+            "type": "string",
+            "description": "The new unit"
+          }
+        ],
+        "body": "this.unit = value;"
+      },
+      "setFooter": {
+        "description": "Set footer",
+        "parameters": [
+          {
+            "name": "value",
+            "type": "any",
+            "description": "The new footer"
+          }
+        ],
+        "body": "this.footer = value;"
+      }
+    },
+    "events": {
+        "onStart": {
+        "description": "Specify the SAC Script that shall be triggered when the Export process is started."
+      },
+        "onClick": {
+            "description": "Called when the user clicks the Box."
+        }
+    
+    }
+  }

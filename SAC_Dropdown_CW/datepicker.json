@@ -1,0 +1,71 @@
+{
+  "name": "Date Range Picker",
+  "description": "date range picker web component 2020-03-17",
+  "eula": "",
+  "vendor": "",
+  "license": "",
+  "id": "com.sac.datepicker",
+  "newInstancePrefix": "Datepicker",
+  "version": "1.0.0",
+  "icon": "https://widgets.saccustomwidgets.com/widgets/mohan/sap.png",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-sac-datepicker",
+      "url": "https://widgets.saccustomwidgets.com/widgets/mohan/jQuery/datepicker.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "startDate": {
+      "type": "string",
+      "description": "start date of date range",
+      "default": "'01/01/2020"
+    },
+    "endDate": {
+      "type": "string",
+      "description": "end date of date range",
+      "default": "01/01/2020"
+    }
+  },
+  "methods": {
+    "getStartDate": {
+        "returnType": "string",
+        "description": "returns start date of selected date range",
+        "body": "return this.startDate;"
+    },
+    "getEndDate": {
+        "returnType": "string",
+        "description": "returns end date of selected date range",
+        "body": "return this.endDate;"
+    },
+    "setHeight": {
+      "parameters":[{
+          "name": "newHeight",
+          "type": "number",
+          "description": "new height for the widget"
+        }],
+      "description": "sets the height of the widget"
+    },
+    "setWidth": {
+      "parameters": [{
+        "name": "newWidth",
+        "type": "number",
+        "description": "new width for the widget"
+      }],
+    "description": "sets the width of the widget"
+    }
+  },
+  "events": {
+    "onApplyClick": {
+      "description": "called when user clicks the apply button"
+    },
+    "onInputClick": {
+      "description": "called when user clicks the input button"
+    },
+    "onCancelClick": {
+      "description": "called whenuser clicks the cancel button"
+    }
+  }
+}
