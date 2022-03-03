@@ -1,0 +1,49 @@
+ {
+	"eula": "",
+	"vendor": "Digital-Sweep",
+	"license": "",
+	"id": "com.sap.sac.sample.lineareav3.prepared",
+	"version": "3.0.0",
+	"name": "LineAreav3",
+	"newInstancePrefix": "LineArea",
+	"description": "LineAreav3",
+	"webcomponents": [
+	  {
+		"kind": "main",
+		"tag": "com-sap-sample-linearea-prepared",
+		"url": "https://sac-dev-cw.novartis.net/cw/dev/SACLineAreaChart/LA.js",
+		"integrity": "",
+		"ignoreIntegrity": true
+	  }
+	],
+	
+	"properties": {
+		  "width": {"type": "integer","default": 600},
+		  "height": {"type": "integer","default": 420 }
+	},
+
+	"methods": {
+				"render":{
+							"description": "Render",
+							"parameters":[
+								{"name":"resultSet","type":"any","description":"The json"},
+								{"name":"KFName","type":"any","description":"KFName"},
+								{"name":"Vrname","type":"any","description":"Vrname"},
+								{"name":"YDirection","type":"any","description":"YDirection"},
+								{"name":"S1","type":"any","description":"Actual"},
+								{"name":"S2","type":"any","description":"Plan"},
+								{"name":"ReplaceNull","type":"any","description":"ReplaceWithNull"},
+								{"name":"DateAxes","type":"any","description":"DateAxes"}
+							]
+						}
+
+            	}, 
+
+	"events": {
+				    "onClick": {
+								 "description": "Called when the user clicks the Box."
+							   }
+							   
+							   
+			}
+  }		  
