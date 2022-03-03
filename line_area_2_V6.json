@@ -1,0 +1,165 @@
+{
+	"eula": "",
+	"vendor": "Darshan Savani",
+	"license": "",
+	"id": "com.sap.sac.sample.linearea.partion",
+	"version": "2.3.3",
+	"name": "LineArea_2p_DR",
+	"newInstancePrefix": "LineArea",
+	"description": "LineArea_2P_DR",
+	"webcomponents": [
+	  {
+		"kind": "main",
+		"tag": "com-sap-sample-linearea-partion",
+		"url": "https://sac-dev-cw.novartis.net/cw/dev/SACLineAreaChart/line_area_2_V6.js",
+		"integrity": "",
+		"ignoreIntegrity": true
+	  }
+	],
+	
+	"properties": {
+		"width": {
+			"type": "integer",
+			"default": 800
+		},
+		"height": {
+			"type": "integer",
+			"default": 720
+		},
+		"resultset_1": {
+			"type": "any",
+			"description": "resultset",
+			"default": ""
+		},
+		"KFName_1": {
+			"type": "any",
+			"description": "KFName",
+			"default": ""
+		},
+		"VrnameUp_1": {
+			"type": "any",
+			"description": "Up",
+			"default": ""
+		},
+		"Vrname_1": {
+			"type": "any",
+			"description": "Vrname",
+			"default": ""
+		},
+		"YDirection_1": {
+			"type": "any",
+			"description": "YDirection",
+			"default": ""
+		},
+		"S1_1": {
+			"type": "any",
+			"description": "S1",
+			"default": ""
+		},
+		"S2_1": {
+			"type": "any",
+			"description": "S2",
+			"default": ""
+		},
+		"ReplaceNull_1": {
+			"type": "any",
+			"description": "ReplaceNull",
+			"default": ""
+		},
+		"LineColorUp": {
+			"type": "any",
+			"description": "LineColorUp",
+			"default": ""
+		},
+		"DateAxes_1": {
+			"type": "any",
+			"description": "DateAxes",
+			"default": ""
+		},
+		"Isyear_1": {
+			"type": "any",
+			"description": "Isyear",
+			"default": ""
+		},
+		"Position": {
+			"type": "any",
+			"description": "Widegt Position",
+			"default": ""
+		}
+	},
+	"methods": {
+		"render": {
+			"description": "Render",
+			"parameters": [
+				{
+					"name": "resultSet",
+					"type": "any",
+					"description": "The json"
+				},
+				{
+					"name": "KFName",
+					"type": "any",
+					"description": "KFName"
+				},
+				{
+					"name": "VrnameUp",
+					"type": "any",
+					"description": "VrnameUp"
+				},
+				{
+					"name": "Vrname",
+					"type": "any",
+					"description": "Vrname"
+				},
+				{
+					"name": "YDirection",
+					"type": "any",
+					"description": "YDirection"
+				},
+				{
+					"name": "S1",
+					"type": "any",
+					"description": "Actual"
+				},
+				{
+					"name": "S2",
+					"type": "any",
+					"description": "Plan"
+				},
+				{
+					"name": "ReplaceNull",
+					"type": "any",
+					"description": "ReplaceWithNull"
+				},
+				{
+					"name": "LineColorUp",
+					"type": "any",
+					"description":"Set Line Color_up"
+				},
+				{
+					"name": "DateAxes",
+					"type": "any",
+					"description": "DateAxes"
+				},
+				{
+					"name": "Isyear",
+					"type": "any",
+					"description": "Is year or not"
+				},{
+					"type": "any",
+					"description": "Widegt Position",
+					"name": "Position"
+				}
+			],
+			"body": "this.resultset_1 = resultSet; this.KFName_1 = KFName; this.VrnameUp_1 = VrnameUp ; this.Vrname_1 = Vrname; this.YDirection_1 = YDirection; this.S1_1 = S1; this.S2_1 = S2; this.ReplaceNull_1 = ReplaceNull; this.LineColorUp = LineColorUp; this.DateAxes_1 = DateAxes; this.Isyear_1 = Isyear; this.Position = Position;"
+		}
+	},
+
+	"events": {
+				    "onClick": {
+								 "description": "Called when the user clicks the Box."
+							   }
+							   
+							   
+			}
+  }		  
