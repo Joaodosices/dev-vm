@@ -1,0 +1,417 @@
+{
+  "id": "com.novartis.segmentedbutton",
+  "version": "0.0.1",
+  "name": "segmentedButton",
+  "description": "Segmented Button Widget",
+  "newInstancePrefix": "segmentedButtons",
+  "vendor": "Marcin Poniewierski",
+  "eula": "",
+  "license": "",
+  "imports": ["input-controls"],
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-novartis-segmented-button",
+      "url": "https://sac-dev-cw.novartis.net/cw/dev/segmentedButton/segmentedButton.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    },
+    {
+      "kind": "builder",
+      "tag": "com-novartis-segmented-button-builder",
+      "url": "https://sac-dev-cw.novartis.net/cw/dev/segmentedButton/segmentedButton.builder.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],  
+  "properties": {
+    "orientation": {
+      "type": "string",
+      "description": "orientation of button group",
+      "default": "horizontal"
+    },
+    "initSelected": {
+      "type": "number",
+      "description": "initially selected button when type is radio",
+      "default": 0
+    },
+    "fontFamily": {
+      "type": "string",
+      "description": "font family for button texts",
+      "default": "current"
+    },
+    "fontWeight": {
+      "type": "string",
+      "description": "label font weight",
+      "default": "normal"
+    },
+    "fontStyle": {
+      "type": "string",
+      "description": "label font style",
+      "default": "normal"
+    },
+    "fontSize": {
+      "type": "number",
+      "description": "label font size",
+      "default": 15
+    },
+    "buttonWidth": {
+      "type": "number",
+      "description": "button width",
+      "default": 100
+    },
+    "buttonHeight": {
+      "type": "number",
+      "description": "button height",
+      "default": 28
+    },
+    "hoverBackgroundColor": {
+      "type": "string",
+      "description": "background color when hover",
+      "default": "#bfbfbf"
+    },
+    "borderColor": {
+      "type": "string",
+      "description": "border color for buttons",
+      "default": "#bfbfbf"
+    },
+    "borderRadius": {
+      "type": "boolean",
+      "description": "border radius of button group",
+      "default": false
+    },
+    "borderRadiusValue": {
+      "type": "number",
+      "description": "value for border radius",
+      "default": 20
+    },
+    "buttonCount": {
+      "type": "number",
+      "description": "no of buttons",
+      "default": 2
+    },
+    "buttonText0": {
+      "type": "string",
+      "description": "text string of button 0",
+      "default": "Button 0"
+    },
+    "buttonTextColor0": {
+      "type": "string",
+      "description": "text color of button 0",
+      "default": "#000000"
+    },
+    "buttonBackColor0": {
+      "type": "string",
+      "description": "background color of button 0",
+      "default": "#fafafa"
+    },
+    "buttonBackSelectedColor0": {
+      "type": "string",
+      "description": "background color when selected of button 0",
+      "default": "#b8b8b8"
+    },
+    "btnState0": {
+      "type": "string",
+      "description": "enabled/disabled state of button 0",
+      "default": "enabled"
+    },
+    "buttonText1": {
+      "type": "string",
+      "description": "text string of button 1",
+      "default": "Button 1"
+    },
+    "buttonTextColor1": {
+      "type": "string",
+      "description": "text color of button 1",
+      "default": "#000000"
+    },
+    "buttonBackColor1": {
+      "type": "string",
+      "description": "background color of button 1",
+      "default": "#fafafa"
+    },
+    "buttonBackSelectedColor1": {
+      "type": "string",
+      "description": "background color when selected of button 1",
+      "default": "#b8b8b8"
+    },
+    "btnState1": {
+      "type": "string",
+      "description": "enabled/disabled state of button 1",
+      "default": "enabled"
+    },
+    "buttonText2": {
+      "type": "string",
+      "description": "text string of button 2",
+      "default": "Button 2"
+    },
+    "buttonTextColor2": {
+      "type": "string",
+      "description": "text color of button 2",
+      "default": "#000000"
+    },
+    "buttonBackColor2": {
+      "type": "string",
+      "description": "background color of button 2",
+      "default": "#fafafa"
+    },
+    "buttonBackSelectedColor2": {
+      "type": "string",
+      "description": "background color when selected of button 2",
+      "default": "#b8b8b8"
+    },
+    "btnState2": {
+      "type": "string",
+      "description": "enabled/disabled state of button 2",
+      "default": "enabled"
+    },
+    "buttonText3": {
+      "type": "string",
+      "description": "text string of button 3",
+      "default": "Button 3"
+    },
+    "buttonTextColor3": {
+      "type": "string",
+      "description": "text color of button 3",
+      "default": "#000000"
+    },
+    "buttonBackColor3": {
+      "type": "string",
+      "description": "background color of button 3",
+      "default": "#fafafa"
+    },
+    "buttonBackSelectedColor3": {
+      "type": "string",
+      "description": "background color when selected of button 3",
+      "default": "#b8b8b8"
+    },
+    "btnState3": {
+      "type": "string",
+      "description": "enabled/disabled state of button 3",
+      "default": "enabled"
+    },
+    "buttonText4": {
+      "type": "string",
+      "description": "text string of button 4",
+      "default": "Button 4"
+    },
+    "buttonTextColor4": {
+      "type": "string",
+      "description": "text color of button 4",
+      "default": "#000000"
+    },
+    "buttonBackColor4": {
+      "type": "string",
+      "description": "background color of button 4",
+      "default": "#fafafa"
+    },
+    "buttonBackSelectedColor4": {
+      "type": "string",
+      "description": "background color when selected of button 4",
+      "default": "#b8b8b8"
+    },
+    "btnState4": {
+      "type": "string",
+      "description": "enabled/disabled state of button 4",
+      "default": "enabled"
+    },
+    "buttonText5": {
+      "type": "string",
+      "description": "text string of button 5",
+      "default": "Button 5"
+    },
+    "buttonTextColor5": {
+      "type": "string",
+      "description": "text color of button 5",
+      "default": "#000000"
+    },
+    "buttonBackColor5": {
+      "type": "string",
+      "description": "background color of button 5",
+      "default": "#fafafa"
+    },
+    "buttonBackSelectedColor5": {
+      "type": "string",
+      "description": "background color when selected of button 5",
+      "default": "#b8b8b8"
+    },
+    "btnState5": {
+      "type": "string",
+      "description": "enabled/disabled state of button 5",
+      "default": "enabled"
+    },
+    "buttonText6": {
+      "type": "string",
+      "description": "text string of button 6",
+      "default": "Button 6"
+    },
+    "buttonTextColor6": {
+      "type": "string",
+      "description": "text color of button 6",
+      "default": "#000000"
+    },
+    "buttonBackColor6": {
+      "type": "string",
+      "description": "background color of button 6",
+      "default": "#fafafa"
+    },
+    "buttonBackSelectedColor6": {
+      "type": "string",
+      "description": "background color when selected of button 6",
+      "default": "#b8b8b8"
+    },
+    "btnState6": {
+      "type": "string",
+      "description": "enabled/disabled state of button 6",
+      "default": "enabled"
+    },
+    "buttonText7": {
+      "type": "string",
+      "description": "text string of button 7",
+      "default": "Button 7"
+    },
+    "buttonTextColor7": {
+      "type": "string",
+      "description": "text color of button 7",
+      "default": "#000000"
+    },
+    "buttonBackColor7": {
+      "type": "string",
+      "description": "background color of button 7",
+      "default": "#fafafa"
+    },
+    "buttonBackSelectedColor7": {
+      "type": "string",
+      "description": "background color when selected of button 7",
+      "default": "#b8b8b8"
+    },
+    "btnState7": {
+      "type": "string",
+      "description": "enabled/disabled state of button 7",
+      "default": "enabled"
+    },
+    "buttonText8": {
+      "type": "string",
+      "description": "text string of button 8",
+      "default": "Button 8"
+    },
+    "buttonTextColor8": {
+      "type": "string",
+      "description": "text color of button 8",
+      "default": "#000000"
+    },
+    "buttonBackColor8": {
+      "type": "string",
+      "description": "background color of button 8",
+      "default": "#fafafa"
+    },
+    "buttonBackSelectedColor8": {
+      "type": "string",
+      "description": "background color when selected of button 8",
+      "default": "#b8b8b8"
+    },
+    "btnState8": {
+      "type": "string",
+      "description": "enabled/disabled state of button 8",
+      "default": "enabled"
+    },
+    "buttonText9": {
+      "type": "string",
+      "description": "text string of button 9",
+      "default": "Button 9"
+    },
+    "buttonTextColor9": {
+      "type": "string",
+      "description": "text color of button 9",
+      "default": "#000000"
+    },
+    "buttonBackColor9": {
+      "type": "string",
+      "description": "background color of button 9",
+      "default": "#fafafa"
+    },
+    "buttonBackSelectedColor9": {
+      "type": "string",
+      "description": "background color when selected of button 9",
+      "default": "#b8b8b8"
+    },
+    "btnState9": {
+      "type": "string",
+      "description": "enabled/disabled state of button 9",
+      "default": "enabled"
+    }
+  },
+  "methods": {
+    "enableButtonItem": {
+      "parameters": [
+        {
+          "type": "number",
+          "description": "0 index based position for button that needs enabling",
+          "name": "index"
+        }
+      ]
+    },
+    "disableButtonItem": {
+      "parameters": [
+        {
+          "type": "number",
+          "description": "0 index based position for button that needs disabling",
+          "name": "index"
+        }
+      ]
+    },
+    "removeButtonItem": {
+      "parameters": [
+        {
+          "type": "number",
+          "description": "0 index based position for button that needs removing",
+          "name": "index"
+        }
+      ]
+    },
+    "addButtonItem": {
+      "parameters": [
+        {
+          "type": "string",
+          "description": "text for button ",
+          "name": "text"
+        },
+        {
+          "type": "string",
+          "description": "text color of button",
+          "name": "textColor"
+        },
+        {
+          "type": "string",
+          "description": "background color of button",
+          "name": "backColor"
+        },
+        {
+          "type": "string",
+          "description": "background color when selected of button",
+          "name": "backSelectedColor"
+        },
+        {
+          "type": "string",
+          "description": " state of button (enabled/disabled)",
+          "name": "btnState"
+        },
+        {
+          "type": "number",
+          "description": "0 index based position for new button",
+          "name": "indexPosition"
+        }
+      ],
+      "description": "adds a new button"
+    },
+    "getSelectedItem": {
+      "description": "returns the text of selected values",
+      "returnType": "string"
+    }
+  },
+  "events": {
+    "buttonClicked": {
+      "description": "triggered when a button is clicked"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+form {
+width:20%;
+height:10px;
+position:right:
+}
+ input {
+width:60%;
+height: 20px;
+ }
+</style>
+
+<title>Informacion Personal</title>
+
+
+<meta charset="utf-8">
+
+<script>
+function shtoInfo() {
+
+var emri = document.getElementById("emri");
+
+var qyteti = document.getElementById("qyteti");
+
+var dega = document.getElementById("dega");
+
+emri.innerHTML = "Emri:<i>Rexhina stoceni</i>";
+
+qyteti.innerHTML = "Qyeti:<i>berat</i>";
+
+dega.innerHTML = "Dega:<i>Informatike</i>"
+
+const src = document.createElement("img");
+img.src = ":\Users\stoceem1\OneDrive - Novartis Pharma AG\Desktop";
+src.appendChild(img);
+}
+
+
+function ndryshoColor(){
+var list = document.getElementsByTagName("li");
+ for (i = 0; i < list.length; i++) {
+    if(  i%2==1 || i%3==2)
+    list[i].style="color:red";
+  
+  }
+ }
+
+
+document.getElementById("font").style.fontFamily = "Arial, sans-serif";
+
+
+
+</script>
+
+</head>
+
+<body id="font">
+<h1>Informacion personal</h1> 
+	
+<ul id="listainfo">
+
+<li id="emri">Emri:</li>
+
+<li id="qyteti">Qyteti:</li>
+
+<li id="dega">Dega:</li>
+
+</ul>
+<hr>
+<h2>Vleresimi</h2>
+<table >
+<tr>
+<th colspan="2">Lenda</th>
+<th>Nota</th>
+</tr>
+<tr>
+<td rowspan="2">Algoritmike</td>
+<td colspan="2">9</td>
+</tr>
+</table>
+<br>
+<h3>Shto vleresim tjeter</h3>
+<br>
+<form>
+<label for="rreshti">Rreshti:</label>
+<br>
+<input type="number" id="rreshti"name="rreshti" min="0">
+<br>
+<label for="lenda">Lenda:</label>
+<br>
+<input type="text" id="lenda"name="lenda" >
+<br>
+<label for="nota">Nota:</label>
+<br>
+<input type="number" id="nota"name="nota" min="1" max="10" >
+<br><br>
+<button type="button" onclick="shtoInfo()"> shto </button
+<br>
+<button type="button" onclick="ndryshoColor()"> ndrysho ngjyren per elementet e listes </button
+
+</body>
+
+</html>
