@@ -1,0 +1,42 @@
+{
+    "id": "com.saccustomwidgets.utils.iframe",
+    "version": "1.0.0",
+    "name": "Iframe",
+    "description": "Iframe for application",
+    "newInstancePrefix": "Iframe",
+    "icon": "",
+    "vendor": "Marcin Poniewierski for Novartis",
+    "eula": "",
+    "license": "",
+    "webcomponents": [
+      {
+        "kind": "main",
+        "tag": "com-saccustomwidgets-utils-iframe",
+        "url": "https://sac-dev-cw.novartis.net/cw/dev/iframe/iframe.js",
+        "integrity": "sha256-ZNDoNoG6NwLXixbSB0I8D4OELZhAIkMbRBQaTFG7uv4=",
+        "ignoreIntegrity": false
+      },
+      {
+        "kind": "builder",
+        "tag": "com-saccustomwidgets-utils-iframe-builder",
+        "url": "https://sac-dev-cw.novartis.net/cw/dev/iframe/iframe.builder.js",
+        "integrity": "sha256-ixSumSGINHD666hsWKBMjg2e38Z99uPFuAfjR7a/8Qg=",
+        "ignoreIntegrity": false
+      }
+    ],
+    "properties": {
+        "url": {
+          "type": "string",
+          "description": "url for the iframe",
+          "default": ""
+        },
+        "sandBox": {
+          "type": "string",
+          "description": "sandbox for the iframe",
+          "default": ""
+        }
+    },
+    "methods": {},
+    "events": {}
+  }
+  
