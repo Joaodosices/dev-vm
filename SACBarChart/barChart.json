@@ -1,0 +1,51 @@
+{
+    "eula": "",
+    "vendor": "Girish Lakhani",
+    "license": "",
+    "id": "com.sap.sac.sample.barChart.prepared",
+    "version": "1.0.0",
+    "name": "Bar_Chart_Ploty",
+    "newInstancePrefix": "barChart",
+    "description": "Bar Chart (Ploty)",
+    "webcomponents": [
+      {
+        "kind": "main",
+        "tag": "com-sap-sample-barchart-prepared",
+        "url": "https://sac-dev-cw.novartis.net/cw/dev/SACBarChart/barChart.js",
+        "integrity": "",
+        "ignoreIntegrity": true
+      }
+    ],
+    "properties": {
+          "width": {
+              "type": "integer",
+              "default": 600
+          },
+          "height": {
+              "type": "integer",
+              "default": 420
+          }
+    },
+    "methods": {
+      "render":{
+        "description": "Render",
+        "parameters":[
+          {
+            "name":"resultSet",
+            "type":"any",
+            "description":"resultSet Value"
+          },
+          {
+            "name":"TopN",
+            "type":"integer",
+            "description":"TopN"
+          }
+        ]
+      }
+    },
+    "events": {
+      "onClick": {
+        "description": "Called when the user clicks the Box."
+      }
+    }
+  }
