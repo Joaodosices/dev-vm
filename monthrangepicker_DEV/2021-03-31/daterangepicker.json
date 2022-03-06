@@ -1,0 +1,177 @@
+{
+    "name": "Month Picker - DEV",
+    "description": "Javascript month picker v",
+    "eula": "",
+    "vendor": "",
+    "license": "",
+    "id": "com.novartis.monthrangepicker.dev",
+    "newInstancePrefix": "monthpicker",
+    "version": "0.0.2",
+    "webcomponents": [
+      {
+        "kind": "main",
+        "tag": "com-novartis-js-monthrangepicker-dev",
+        "url": "https://sac-dev-cw.novartis.net/cw/dev/monthrangepicker_DEV/daterangepicker.js",
+        "integrity": "",
+        "ignoreIntegrity": true
+      },
+      {
+        "kind": "builder",
+        "tag": "com-novartis-js-monthrangepicker-builder-dev",
+        "url": "https://sac-dev-cw.novartis.net/cw/dev/monthrangepicker_DEV/daterangepicker.builder.js",
+        "integrity": "",
+        "ignoreIntegrity": true
+      }
+    ],
+    "properties": {
+		"calendarType": { 
+			"type": "string",
+			"description": "Year or month selection",
+			"default": "month"
+		},
+		"dateFormatSelect": { 
+			"type": "string",
+			"description": "date format select first value",
+			"default": "MM/YYYY"
+		},
+      "dateFormat": { 
+        "type": "string",
+        "description": "date format first value",
+        "default": "MM/YYYY"
+      },
+      "externalCssUrl": {
+        "type": "string",
+        "description": "url for external css",
+        "default": ""
+      },
+      "mode": {
+        "type": "string",
+        "description": "mode of selection for date",
+        "default": "range"
+      }
+    },
+    "methods": {
+      "getStartDate": {
+          "returnType": "string",
+          "description": "returns start date of selected date range",
+          "parameters":[{
+            "name": "dateFormat",
+            "type": "string",
+            "description": "date format"
+          }]
+      },
+      "openCalendar": {
+        "description": "opens the calendar"
+      },
+      "getEndDate": {
+          "returnType": "string",
+          "description": "returns end date of selected date range",
+          "parameters":[{
+            "name": "dateFormat",
+            "type": "string",
+            "description": "date format"
+          }]
+      },
+	  "setInitialVisibleYear": {
+          "returnType": "string",
+          "description": "sets initialy visible year",
+          "parameters":[{
+            "name": "initialYear",
+            "type": "string",
+            "description": "initial year tho show when opening calendar for the first time"
+          }]
+      },
+		"setStartDate": {
+          "returnType": "string",
+          "description": "preselects start date",
+          "parameters":[{
+				"name": "startDateYear",
+				"type": "string",
+				"description": "year of start date"
+			},{
+				"name": "startDateMonth",
+				"type": "string",
+				"description": "month of start date"
+			}]
+		},
+		"setEndDate": {
+          "returnType": "string",
+          "description": "preselects end date",
+          "parameters":[{
+				"name": "endDateYear",
+				"type": "string",
+				"description": "year of end date"
+			},{
+				"name": "endDateMonth",
+				"type": "string",
+				"description": "month of end date"
+			}]
+		},
+		"setEnabledPeriod": {
+          "returnType": "string",
+          "description": "enables period so it can be clicked",
+          "parameters":[{
+				"name": "enabledYear",
+				"type": "string",
+				"description": "year of enabled period"
+			},{
+				"name": "enabledMonth",
+				"type": "string",
+				"description": "month of enabledPeriod"
+			}]
+		},
+		"setDisabledPeriod": {
+          "returnType": "string",
+          "description": "disables period so it can NOT be clicked",
+          "parameters":[{
+				"name": "disabledYear",
+				"type": "string",
+				"description": "year of disabled period"
+			},{
+				"name": "disabledMonth",
+				"type": "string",
+				"description": "month of disabled period"
+			}]
+		},
+		"disableAll": {
+          "returnType": "string",
+          "description": "disables selection for all periods"
+		},
+		"enableAll": {
+          "returnType": "string",
+          "description": "disables selection for all periods"
+		},
+		"clearSelection": {
+          "returnType": "string",
+          "description": "removes any selection from the calendar"
+		},
+		"setVisibleRange": {
+          "returnType": "string",
+          "description": "makes from-to range visible in calendar. Others will not be visible",
+          "parameters":[{
+				"name": "yearFrom",
+				"type": "string",
+				"description": "year from of available periods"
+			},{
+				"name": "monthFrom",
+				"type": "string",
+				"description": "month from of available periods. Leave empty for year calendar."
+			},{
+				"name": "yearTo",
+				"type": "string",
+				"description": "year to of available periods"
+			},{
+				"name": "monthTo",
+				"type": "string",
+				"description": "month to of available periods. Leave empty for year calendar."
+			}]
+		}
+    },
+    "events": {
+      "onChange": {
+        "description": "fired when date range is selected"
+      }
+    }
+  }
+  
+  

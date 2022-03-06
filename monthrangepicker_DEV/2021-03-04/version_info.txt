@@ -1,0 +1,3 @@
+Version as published with:
+- some bug fixes
+- Ability to select predefined formats (or custom for manual entry)
