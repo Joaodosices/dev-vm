@@ -1,0 +1,73 @@
+#calendar-month, #calendar-decade {
+  width: 300px;
+  border: 1px solid #ababab;
+  background: #fff;
+}
+.hide {
+  display: none;
+}
+.year-container, .decade-container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    padding: 15px 0;
+}
+
+#next, #prev, #d-next, #d-prev {
+    color: #023054;
+    background:  #deebf7;
+    padding: 8px 13px;
+    border-radius: 18px;
+	font-weight: bold;
+}
+#next:hover, #prev:hover, #d-next:hover, #d-prev:hover {
+    color: #FFFFFF;
+    background: #023054;
+}
+
+#year, #decade, .year-container>div, .decade-container>div {
+    text-align: center;
+}
+
+.month-grid-container, #decade-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+}
+.month , .year {
+    text-align: center;
+    padding: 15px 0;
+    margin:2px;
+    border-radius: 2px;
+    background-color: #fff;
+    color: #000000;
+}
+.month:not(.disabled):hover {
+    color: #000000;
+    background-color: #deebf7;
+}
+.range-month {
+    color: #000000;
+    background-color: #deebf7;
+}
+.start-end-month {
+    color: #FFFFFF;
+    background-color: #023054;
+}
+.start-month {
+    color: #FFFFFF;
+    background-color: #023054;
+}
+.end-month {
+    color: #FFFFFF;
+    background-color: #023054;
+}
+.start-end-year {
+    color: #000000;
+    background-color: #FFFFFF;
+}
+.start-end-year:hover {
+    
+    background-color: #deebf7;
+}
+.disabled {
+    color: #ababab;
+}

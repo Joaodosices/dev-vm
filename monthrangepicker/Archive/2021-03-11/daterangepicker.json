@@ -1,0 +1,78 @@
+{
+    "name": "Month Picker",
+    "description": "Javascript month picker",
+    "eula": "free for Novartis",
+    "vendor": "Marcin Poniewierski",
+    "license": "free for Novartis use or change",
+    "id": "com.saccustomwidgets.monthrangepicker",
+    "newInstancePrefix": "monthpicker",
+    "version": "0.0.1",
+    "webcomponents": [
+      {
+        "kind": "main",
+        "tag": "com-saccustomwidgets-js-monthrangepicker",
+        "url": "https://sac-dev-cw.novartis.net/cw/dev/monthrangepicker/daterangepicker.js",
+        "integrity": "",
+        "ignoreIntegrity": true
+      },
+      {
+        "kind": "builder",
+        "tag": "com-saccustomwidgets-js-monthrangepicker-builder",
+        "url": "https://sac-dev-cw.novartis.net/cw/dev/monthrangepicker/daterangepicker.builder.js",
+        "integrity": "",
+        "ignoreIntegrity": true
+      }
+    ],
+    "properties": {
+      "dateFormat": {
+        "type": "string",
+        "description": "date format first value",
+        "default": "MM/YYYY"
+      },
+      "externalCssUrl": {
+        "type": "string",
+        "description": "url for external css",
+        "default": ""
+      },
+      "defaultCssUrl": {
+        "type": "string",
+        "description": "defaultCSsURL",
+        "default": "https://sac-dev-cw.novartis.net/cw/dev/monthrangepicker/daterangepicker.css"
+      },
+      "mode": {
+        "type": "string",
+        "description": "mode of selection for date",
+        "default": "range"
+      }
+    },
+    "methods": {
+      "getStartDate": {
+          "returnType": "string",
+          "description": "returns start date of selected date range",
+          "parameters":[{
+            "name": "dateFormat",
+            "type": "string",
+            "description": "date format"
+          }]
+      },
+      "openCalendar": {
+        "description": "opens the calendar"
+      },
+      "getEndDate": {
+          "returnType": "string",
+          "description": "returns end date of selected date range",
+          "parameters":[{
+            "name": "dateFormat",
+            "type": "string",
+            "description": "date format"
+          }]
+      }
+    },
+    "events": {
+      "onChange": {
+        "description": "fired when date range is selected"
+      }
+    }
+  }
+  
+  
