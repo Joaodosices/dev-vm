@@ -1,0 +1,315 @@
+{
+  "id": "com.DS.FINALV4.1.sap.sac.multiinput",
+  "version": "4.1.0",
+  "name": "Final Dropdown V4.1",
+  "description": "Final Dropdown V4.1",
+  "newInstancePrefix": "Final_Dropdown_V4.1",
+  "vendor": "Daniel Santos",
+  "eula": "",
+  "license": "",
+  "imports": [
+    "input-controls"
+  ],
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-ds-finalv4-sap-sac-alive",
+      "url": "https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/Final_Dropdown_V4.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    },
+    {
+      "kind": "builder",
+      "tag": "com-ds-finalv4.1-sap-sac-alive-builder",
+      "url": "https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/Final_Dropdown_V4_Builder.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    },
+    {
+      "kind": "styling",
+      "tag": "com-ds-finalv4-sap-sac-alive-styling",
+      "url": "https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/Final_Dropdown_V4_Styling.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "Selection_Type": {
+      "type": "string",
+      "description": "Set a Selection Type",
+      "default": "SingleSelectLeft"
+    },
+    "Display": {
+      "type": "string",
+      "description": "ID, DEC, ID-DEC",
+      "default": "text"
+    },
+    
+    "LEVEL_col": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+    "PARENTID_col": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+    "NODEID_col": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+    "TEXTID_col": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+    "TEXTDEC_col": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+    "Field1_Name": {
+      "type": "string",
+      "description": "",
+      "default": ""
+    },
+    "Field2_Name": {
+      "type": "string",
+      "description": " ",
+      "default": ""
+    },
+    "Field1_Value": {
+      "type": "string[]",
+      "description": "",
+      "default": []
+    },
+    "Field2_Value": {
+      "type": "string[]",
+      "description": " ",
+      "default": []
+    },
+    "Show_Display": {
+      "type": "string",
+      "description": "",
+      "default": "No"
+    },
+    "Show_Parent": {
+      "type": "string",
+      "description": "",
+      "default": "No"
+    },
+    "Separator": {
+      "type": "string",
+      "description": "",
+      "default": " "
+    },
+    "fstyle": {
+      "type": "string",
+      "description": "",
+      "default": " "
+    },
+    "fsize": {
+      "type": "integer",
+      "description": "",
+      "default": 12
+    },
+    "fcolor": {
+      "type": "string",
+      "description": "",
+      "default": " "
+    },
+    "fbi": {
+      "type": "string",
+      "description": "",
+      "default": " "
+    },
+
+    "SelectedChild": {
+      "type": "string[]",
+      "description": "SelectedChild",
+      "default": []
+    },
+    "SelectedNodeDec": {
+      "type": "string[]",
+      "description": "SelectedNodeDec",
+      "default": []
+    },
+    "SelectedNodeId": {
+      "type": "string[]",
+      "description": "SelectedNodeId",
+      "default": []
+    },
+
+    "SelectedLevel_Value": {
+      "type": "string[]",
+      "description": "Selected Level of the node",
+      "default": []
+    },
+    "SelectedParentId_Value": {
+      "type": "string[]",
+      "description": "Selected ParentId of the node",
+      "default": []
+    },
+    "SelectedNodeId_Value": {
+      "type": "string[]",
+      "description": "Selected NodeId of the node",
+      "default": []
+    },
+    "SelectedTextId_Value": {
+      "type": "string[]",
+      "description": "Selected TextId of the node",
+      "default": []
+    },
+    "SelectedTextDesc_Value": {
+      "type": "string[]",
+      "description": "Selected TextDesc of the node",
+      "default": []
+    },
+
+
+    "return": {
+      "type": "string[]",
+      "description": "return",
+      "default": []
+    },
+    "setdata": {
+      "type": "any",
+      "description": "setdata",
+      "default": ""
+    },
+    "filterInfo": {
+      "type": "any",
+      "description": "Filter Information",
+      "default": ""
+    },
+    "default": {
+      "type": "any",
+      "description": "default Selection",
+      "default": ""
+    },
+    "widgetno": {
+      "type": "integer",
+      "description": "Widget No",
+      "default": 0
+    },
+    "ptid": {
+      "type": "string[]",
+      "description": "parent nodename",
+      "default": []
+    },
+    "ptdec": {
+      "type": "string[]",
+      "description": "parent nodename",
+      "default": []
+    }
+
+  },
+  "methods": {
+    "getSelectedChild": {
+      "returnType": "string[]",
+      "description": "Get Selected Childs",
+      "parameters": [],
+      "body": "return this.SelectedChild;"
+    },
+    "getSelectedNodeId": {
+      "returnType": "string[]",
+      "description": "Get Selected Nodes",
+      "parameters": [],
+      "body": "return this.SelectedNodeId;"
+    },
+    "getSelectedNodeDec": {
+      "returnType": "string[]",
+      "description": "Get Selected Node Dec",
+      "parameters": [],
+      "body": "return this.SelectedNodeDec;"
+    },
+
+    "getParent": {
+      "returnType": "string[]",
+      "description": "Return Parent Nodename for Node",
+      "parameters": [
+        {
+          "name": "IDorDEC",
+          "type": "string",
+          "description": "get parent ID or DEC"            
+        }
+      ],
+      "body": "if(IDorDEC === 'ID'){return this.ptid;}else if(IDorDEC === 'DEC'){return this.ptdec;}"
+    },
+    "getColumnValue": {
+      "returnType": "string[]",
+      "description": "Get Return Data",
+      "parameters": [
+        {
+          "name": "FieldName",
+          "type": "string",
+          "description": "Set FieldName"
+        }
+      ],
+      "body": "if(this.Field1_Name === FieldName){return this.Field1_Value;}else if(this.Field2_Name === FieldName){return this.Field2_Value;}"
+    },
+    "setData": {
+      "description": "Set Dataset",
+      "parameters": [
+        {
+          "name": "resultset",
+          "type": "any",
+          "description": "Set Data ResultSet"
+        },
+        {
+          "name": "widgetno",
+          "type": "integer",
+          "description": "WidgetNo"
+        },
+        {
+          "name": "defaultselection",
+          "type": "any",
+          "description": "set default selection"
+        }
+      ],
+      "body": "this.setdata = resultset; this.default = defaultselection; this.widgetno = widgetno; "
+    },
+
+    "getSelectedLevel_Value": {
+      "returnType": "string[]",
+      "description": "Get Selected Level Value",
+      "parameters": [],
+      "body": "return this.SelectedLevel_Value;"
+    },
+    "getSelectedParentId_Value": {
+      "returnType": "string[]",
+      "description": "Get Selected ParentId Value",
+      "parameters": [],
+      "body": "return this.SelectedParentId_Value;"
+    },
+    "getSelectedNodeId_Value": {
+      "returnType": "string[]",
+      "description": "Get Selected NodeId Value",
+      "parameters": [],
+      "body": "return this.SelectedNodeId_Value;"
+    },
+    "getSelectedTextId_Value": {
+      "returnType": "string[]",
+      "description": "Get Selected TextId Value",
+      "parameters": [],
+      "body": "return this.SelectedTextId_Value;"
+    },
+    "getSelectedTextDesc_Value": {
+      "returnType": "string[]",
+      "description": "Get Selected TextDesc Value",
+      "parameters": [],
+      "body": "return this.SelectedTextDesc_Value;"
+    }
+    
+  },
+  "events": {
+    "onClick": {
+      "description": "Called when the user clicks the Hierarchy Custom-Widget"
+    },
+    "onChange": {
+      "description": "Called when the user changes the Hierarchy Custom-Widget"
+    }
+  }
+}

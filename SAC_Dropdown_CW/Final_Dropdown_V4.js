@@ -9,6 +9,13 @@
     let _SelectedChild;
     let _SelectedNode;
     let _SelectedNodeDec;
+
+    let _SelectedLevel_Value;
+    let _SelectedParentId_Value;
+    let _SelectedNodeId_Value;
+    let _SelectedTextId_Value;
+    let _SelectedTextDesc_Value;
+
     let _ptid;
     let _ptdec;
     let _FF1;
@@ -57,6 +64,13 @@
                 this.dispatchEvent(eventclick);
 
             });
+
+            this.addEventListener("change", event => {
+                var eventchange = new Event("onChange");
+                this.dispatchEvent(eventchange);
+
+            });
+
             this._props = {};
             this._firstConnection = 0;
         }
@@ -85,6 +99,13 @@
             this.SelectedChild = "";
             this.SelectedNodeId = "";
             this.SelectedNodeDec = "";
+
+            this.SelectedLevel_Value = "";
+            this.SelectedParentId_Value = "";
+            this.SelectedNodeId_Value = "";
+            this.SelectedTextId_Value = "";
+            this.SelectedTextDesc_Value = "";
+
             this.Field1_Value = "";
             this.Field2_Value = "";
             this.ptid = "";
@@ -96,6 +117,13 @@
                         SelectedChild: this.SelectedChild,
                         SelectedNodeId: this.SelectedNodeId,
                         SelectedNodeDec: this.SelectedNodeDec,
+
+                        SelectedLevel_Value: this.SelectedLevel_Value,
+                        SelectedParentId_Value: this.SelectedParentId_Value,
+                        SelectedNodeId_Value: this.SelectedNodeId_Value,
+                        SelectedTextId_Value: this.SelectedTextId_Value,
+                        SelectedTextDesc_Value: this.SelectedTextDesc_Value,
+
                         ptid: this.ptid,
                         ptdec: this.ptdec,
                         Field1_Value: this.Field1_Value,
@@ -129,6 +157,44 @@
             value = _SelectedNodeDec;
             this._export_settings.SelectedNodeDec = value;
         }
+
+
+        get SelectedLevel_Value() {
+            return this._export_settings.SelectedLevel_Value;
+        }
+        set SelectedLevel_Value(value) {
+            value = _SelectedLevel_Value;
+            this._export_settings.SelectedLevel_Value = value;
+        }
+        get SelectedParentId_Value() {
+            return this._export_settings.SelectedParentId_Value;
+        }
+        set SelectedParentId_Value(value) {
+            value = _SelectedParentId_Value;
+            this._export_settings.SelectedParentId_Value = value;
+        }
+        get SelectedNodeId_Value() {
+            return this._export_settings.SelectedNodeId_Value;
+        }
+        set SelectedNodeId_Value(value) {
+            value = _SelectedNodeId_Value;
+            this._export_settings.SelectedNodeId_Value = value;
+        }
+        get SelectedTextId_Value() {
+            return this._export_settings.SelectedTextId_Value;
+        }
+        set SelectedTextId_Value(value) {
+            value = _SelectedTextId_Value;
+            this._export_settings.SelectedTextId_Value = value;
+        }
+        get SelectedTextDesc_Value() {
+            return this._export_settings.SelectedTextDesc_Value;
+        }
+        set SelectedTextDesc_Value(value) {
+            value = _SelectedTextDesc_Value;
+            this._export_settings.SelectedTextDesc_Value = value;
+        }
+
 
         get ptid() {
             return this._export_settings.ptid;
@@ -175,7 +241,13 @@
             return [
                 "SelectedChild",
                 "setdata",
-                "SelectedNodeId"
+                "SelectedNodeId",
+                
+                "SelectedLevel_Value",
+                "SelectedParentId_Value",
+                "SelectedNodeId_Value",
+                "SelectedTextId_Value",
+                "SelectedTextDesc_Value"
             ];
         }
     }
@@ -183,7 +255,7 @@
     /*--------------------------------------------------------------------------------------------------------------- */
     /*--------------------------End: Main Class ------------------------------------- */
 
-    customElements.define("com-ds-finalv3-sap-sac-alive", MultiInput);
+    customElements.define("com-ds-finalv4-sap-sac-alive", MultiInput);
 
     function loadthis(that, changedProperties) {
 
@@ -264,7 +336,7 @@
 
         /*-------------------------- Check and Set Separator  ------------------------------------- */
         if (that.Separator) {
-            _BuilderPanel[that.widgetno] = { Separator: that.Separator, Display: that.Display, Show_Display: that.Show_Display };
+            _BuilderPanel[that.widgetno] = { Separator: that.Separator, Display: that.Display, Show_Display: that.Show_Display, Show_Parent: that.Show_Parent };
             var spart = that.Separator;
             var Selection = that.Display;
         } else {
@@ -902,6 +974,8 @@
                             /*-------------------------- Data assigned to Model For Tree Structure ------------------------------------- */
                              var oModel = new JSONModel(data);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
+
+
                         },
 
                         /*-------------------------- Live Search for SearchField  ------------------------------------- */
@@ -942,8 +1016,6 @@
                                 var ptextid = [];
                                 var ptextdec = [];
 
-
-
                                 for (var i = 0; i < dfnumber.length; i++) {
                                     this.byId("Tree").getItems()[dfnumber[i]].setSelected(true);
                                     var snode = that.default[i];
@@ -973,30 +1045,51 @@
                             }
                             var fbi = _FontStyle[that.widgetno];
 
-                            console.log(fbi);
-
-
-                            // $('.sapMTreeItemBase').css({ "background-color": "transparent", "font-weight": fbi[2], "font-family": fbi[0], "color": fbi[3], "font-size": fbi[1] + "px" });
-                            $('.sapMTreeItemBase').css({ "background-color": "transparent"});
-                            console.log("Bbbbbbbbbbbbbbbbbbb");
-                            $('.sapMTreeItemBase, .sapMIBar').css({ "background-color": "transparent" });
+                            //console.log("Aaaaaaaaaaaaaaaaaaa");
                             $('.sapMLIB').css({ "border-bottom": "0px solid #e5e5e5" });
-                            $('.sapMIBar').css({ "background-color": "transparent" });
-
+                            $('.sapMTreeItemBase').css({ "background-color": "transparent"});
+                            //$('.sapMIBar').css({ "background-color": "transparent" });
                             // $('.sapMTreeItemBase:hover').css({ "background-color": "Lightgray", "font-weight": "bold"});
                             // $('.sapMSltLabel ').css({ "background-color": "transparent", "font-style": "normal", "font-family": "cambria" });
                             // $('.sapMListHdr, .sapMListHdrTBar').css({ "background-color": "transparent", "font-weight": "bold", "font-family": "Arial" });
-                            
-                            // for (var j = 0; j < 3; j++) {
-                                //     if(this.getView().byId("Tree").getItems()[j].mProperties.title =='All_Brands'){
-                                //     sap.ui.getCore().byId(this.byId("Tree").getItems()[j].$().find('.sapMCb').attr('id')).setEnabled(false);
-                                // this.byId("Tree").getItems()[j].$().css({ 'color': 'black', 'pointer-events': 'none', "background-color": "lightblue" });
-                                // this.byId("Tree").getItems()[j].$().css('pointer-events', 'none');
-                            // }
-                            // } 
+                            //$('.sapMTreeItemBase, .sapMIBar').css({ "background-color": "transparent" });
+                            //Change Label Txt from Sac Definition || 
+                            this.byId("Tree").$().find('.sapMLIBContent').css({"font-family": fbi[0], "font-size": fbi[1] + "px", "font-weight": fbi[2], "color": fbi[3] + "!important"});
+                            //this.byId("Tree").css('::-webkit-scrollbar {background-color: red }, 0');
 
 
 
+                            //     if(this.getView().byId("Tree").getItems()[j].mProperties.title =='All_Brands'){
+                            //       sap.ui.getCore().byId(this.byId("Tree").getItems()[j].$().find('.sapMCb').attr('id')).setEnabled(false);
+                                //this.byId("Tree").getItems()[j].$().css({ 'color': 'gray', 'pointer-events': 'none', "background-color": "lightblue" });
+                            //} 
+
+
+                            if (that.Show_Parent === "Yes") {
+                                // THIS IS SHOW_PARENT === YES
+                                console.log("THIS IS ONDEFAULT SEELECTION - PARENT ARE DISABLED");
+
+                                // This is to disable Nodes and to make the span (Expand/ Collapse Icon) clickable
+                                this.byId("Tree").$().find('.sapMTreeItemBase').css('pointer-events', 'none');
+                                this.byId("Tree").$().find('.sapMTreeItemBase').css('cursor', 'not-allowed');
+                                this.byId("Tree").$().find('li').css('pointer-events', 'none');
+                                this.byId("Tree").$().find('span').css('pointer-events', 'all');
+                                this.byId("Tree").$().find('.sapMRb').css({ "display": "none", "pointer-events": "none" }); 
+                                this.byId("Tree").$().find('.sapMLIBContent').css({ "margin-left": "1rem", "color": "RGBA(0,0,0,0.25)", "pointer-events": "none" });
+                                
+                                // This is to Enable Child Elements for Selection
+                                const baseItem = this.byId("Tree").$().find('.sapMTreeItemBaseLeaf');
+                                baseItem.find('span').css('pointer-events', 'none');
+                                baseItem.find('li').css('pointer-events', 'all');
+                                baseItem.find('.sapMRb').css({ "display": "block", "pointer-events": "all" });
+                                baseItem.find('.sapMLIBContent').css({ "margin-left": "-0.5rem", "pointer-events": "all" , "color": fbi[3] + "!important" });
+                                baseItem.css('cursor', 'pointer');
+                                console.log();
+                            }
+                            else {
+                                // THIS IS SHOW_PARENT === NO
+                                console.log("THIS IS ONDEFAULT SEELECTION - PARENT ARE ENABLED");      
+                            }
                         },
 
                         /*--------------------------  Set DisplayTitle Node for ID,DEC,ID-DEC ------------------------------------- */
@@ -1010,6 +1103,7 @@
                                 var node = this.getView().byId("Tree").getItems()[i].getBindingContext(that.widgetName).getObject()[displaymode];
 
                                 this.byId("Tree").getItems()[i].setTitle(node);
+
                             }
                         },
 
@@ -1074,6 +1168,22 @@
                             _FF2 = FFF2;
                             _ptdec = ptextdec;
                             _ptid = ptextid;
+
+
+                            if (that.Show_Parent === "Yes") {
+                                // THIS IS SHOW_PARENT === YES
+                                console.log("THIS IS AFTER ONSELECT - PARENT ARE DISABLED");
+
+                                // This makes the Checkbox hoverable after a change and removes the Checkbox of the 1st item
+                                this.byId("Tree").$().find('.sapMRb').css('display', "none"); 
+                                const baseItem = this.byId("Tree").$().find('.sapMTreeItemBaseLeaf');
+                                baseItem.find('.sapMRb').css({ "display": "block", "pointer-events": "all" });
+                        
+                            }
+                            else {
+                                // THIS IS SHOW_PARENT === NO
+                                console.log("THIS IS AFTER ONSELECT - PARENT ARE ENABLED");
+                            }
 
                             that._firePropertiesChanged();
 

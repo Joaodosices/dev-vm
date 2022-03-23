@@ -20,7 +20,7 @@
       }
     ],
     "properties": {
-
+      
       "unit": {
         "type": "string[]",
         "description": "unit",

@@ -1,7 +1,4 @@
 (function () {
-
-    /*--------------------------------------------------------------------------------------------------------------- */
-    /*--------------------------  Global Variable Declaration  ------------------------------------- */
     let _shadowRoot;
     let div;
     let widgetName;
@@ -49,7 +46,6 @@
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
             this._export_settings = {};
-
 
             this.addEventListener("click", event => {
                 var eventclick = new Event("onClick");
@@ -105,7 +101,6 @@
             }));
         }
 
-        /*-------------------------- Get Set property for data return method  ------------------------------------- */
         get unit() {
             return this._export_settings.unit;
         }
@@ -245,7 +240,8 @@
             }
         }
 
-        /*--------------------------Local Variable Declaration  ------------------------------------- */
+        // console.log(rowData);
+
         var data = [];
         var count = 0;
         var filterparent = [];
@@ -604,27 +600,36 @@
             _setModeInfo[that.widgetno] = 1;
             _dfdesc[that.widgetno - 1] = dfdesc;
 
+            // console.log("Widget:");
+            // console.log(that.widgetName);
+
+            // console.log("Filternode:");
+            // console.log(_filternode);
+
+            // console.log("Filtervalue:");
+            // console.log(_filtervalue);
+
+            // console.log("DFNumber:");
+            // console.log(_dfnumber);
+
         }
 
         /*--------------------------------------------------------------------------------------------------------------- */
         /*--------------------------End: Data from SAC and prepare for JSON Model ------------------------------------- */
         /*--------------------------------------------------------------------------------------------------------------- */
 
-
-        /*--------------------------------------------------------------------------------------------------------------- */
-        /*--------------------------Apend Tree xml Script in Inner HTML ------------------------------------- */
-
         div = document.createElement('div');
+        // div.setAttribute("style", "position:fixed;");
         div.slot = "content_" + widgetName;
 
         let div0 = document.createElement('div');
-
+        
         div0.innerHTML = '<link rel="stylesheet" href="https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/Final_Dropdown.css"> <script  id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">  <Tree id="Tree" sticky="HeaderToolbar"  items="{' + widgetName + '>/}" mode=""  selectionChange="onSelect"  includeItemInSelection="true"  updateFinished="onDefaultSelction" > <headerToolbar> <OverflowToolbar> <Input  width="93%" placeholder="Type to search" value="{search/query}" liveChange="onLiveChange" showSuggestion="true" showClearIcon="true" /> </OverflowToolbar> </headerToolbar><StandardTreeItem class="" title="{' + widgetName + '>text}" selected="{selected}"/> </Tree></mvc:View></script>'
-
+        
         // div0.innerHTML = '<link rel="stylesheet" href="https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/Final_Dropdown.css"> <script  id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View  controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">  <Tree id="Tree" items="{' + widgetName + '>/}" mode=""  selectionChange="onSelect"  includeItemInSelection="true"  updateFinished="onDefaultSelction" > <headerToolbar> <OverflowToolbar> <SearchField id="search" width="93%" value="{search>/query}" showSearchButton="true"  search="hitsearch" liveChange="onLiveChange" /> </OverflowToolbar> </headerToolbar><StandardTreeItem class="" title="{' + widgetName + '>text}" selected="{selected}"/> </Tree></mvc:View></script>'
         // div0.innerHTML = '<link rel="stylesheet" href="https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/Final_Dropdown.css"> <script  id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View  controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"> <Tree  class="customColor"  id="Tree" items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect"  includeItemInSelection="true" updateFinished="onDefaultSelction" > <headerToolbar><OverflowToolbar> <SearchField  width="93%" value="{search>/query}" liveChange="onLiveChange" /> </OverflowToolbar> </headerToolbar><StandardTreeItem class="customColor" title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>'
         // div0.innerHTML = '<div class="customColor">  <link rel="stylesheet" href="https://sac-dev-cw.novartis.net/cw/dev/SAC_Dropdown_CW/Final_Dropdown.css"> <script  id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View  controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"> <Tree  class="customColor"  id="Tree" items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect"  includeItemInSelection="true" updateFinished="onDefaultSelction" > <headerToolbar><OverflowToolbar> <SearchField  width="93%" value="{search>/query}" liveChange=".onLiveChange" /> </OverflowToolbar> </headerToolbar><StandardTreeItem class="customColor" title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script></div>'
-        _shadowRoot.appendChild(div0);
+        _shadowRoot.appendChild(div0); 
 
         if (that._firstConnection === 1) {
         } else {
@@ -645,8 +650,7 @@
         sap.ui.getCore().attachInit(function () {
             "use strict";
 
-            /*-------------------------- Controller Fucntion ------------------------------------- */
-
+            //### Controller ###
             sap.ui.define(['sap/ui/core/mvc/Controller',
                 'sap/ui/model/json/JSONModel'],
 
@@ -656,41 +660,40 @@
                     var PageController = Controller.extend("myView.Template", {
                         onInit: function (event) {
 
-                            console.log(IDNum1[that.widgetno]);
+                         console.log(IDNum1[that.widgetno]);
 
-                            if (IDNum1[that.widgetno] > 0) {
+                          if(IDNum1[that.widgetno]>0){  
 
-                                switch (that.widgetno) {
-                                    case 1:
-                                        if (sap.ui.getCore().byId("__xmlview1--Tree").getSelectedItems().length > 0) {
-                                            sap.ui.getCore().byId("__xmlview1--Tree").removeSelections();
-                                        }
-                                        break;
-                                    case 2:
-                                        if (sap.ui.getCore().byId("__xmlview2--Tree").getSelectedItems().length > 0) {
-                                            sap.ui.getCore().byId("__xmlview2--Tree").removeSelections();
-                                        }
-                                        break;
-                                    case 3:
-                                        if (sap.ui.getCore().byId("__xmlview3--Tree").getSelectedItems().length > 0) {
-                                            sap.ui.getCore().byId("__xmlview3--Tree").removeSelections();
-                                        }
-                                        break;
-                                    case 4:
-                                        if (sap.ui.getCore().byId("__xmlview4--Tree").getSelectedItems().length > 0) {
-                                            sap.ui.getCore().byId("__xmlview4--Tree").removeSelections();
-                                        }
-                                        break;
-                                }
+                            switch (that.widgetno) {
+                                case 1:
+                                    if (sap.ui.getCore().byId("__xmlview1--Tree").getSelectedItems().length > 0) {
+                                        sap.ui.getCore().byId("__xmlview1--Tree").removeSelections();
+                                    }
+                                    break;
+                                case 2:
+                                    if (sap.ui.getCore().byId("__xmlview2--Tree").getSelectedItems().length > 0) {
+                                        sap.ui.getCore().byId("__xmlview2--Tree").removeSelections();
+                                    }
+                                    break;
+                                case 3:
+                                    if (sap.ui.getCore().byId("__xmlview3--Tree").getSelectedItems().length > 0) {
+                                        sap.ui.getCore().byId("__xmlview3--Tree").removeSelections();
+                                    }
+                                    break;
+                                case 4:
+                                    if (sap.ui.getCore().byId("__xmlview4--Tree").getSelectedItems().length > 0) {
+                                        sap.ui.getCore().byId("__xmlview4--Tree").removeSelections();
+                                    }
+                                    break;
                             }
-                            IDNum1[that.widgetno] += 1;
+                        }
+                        IDNum1[that.widgetno] += 1;
+                            
 
-                            /*-------------------------- Data assigned to Model For Tree Structure ------------------------------------- */
                             var oModel = new JSONModel(data);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
                         },
 
-                        /*-------------------------- Live Search for SearchField  ------------------------------------- */
                         onLiveChange: function (event) {
 
                             console.log("Search");
@@ -703,7 +706,19 @@
                             this.byId("Tree").expandToLevel(9999);
                         },
 
-                        /*-------------------------- DefaultSelection at OnInitialization ------------------------------------- */
+                        hitsearch: function (event) {
+
+                            console.log("Search");
+                            var query = event.getSource().getValue();
+
+                            this.byId("Tree").getBinding("items").filter(query ? new sap.ui.model.Filter({
+                                path: "text",
+                                operator: "Contains",
+                                value1: query,
+                            }) : null);
+                            this.byId("Tree").expandToLevel(9999);
+                        },
+
                         onDefaultSelction: function (event) {
 
                             if (IDNum[that.widgetno]) {
@@ -713,8 +728,12 @@
                                 IDNum[that.widgetno] -= 1;
 
                             }
+
                             if (that.widgetName && that.setmode && _setModeInfo[that.widgetno]) {
 
+                                // IDNum = IDNum + 1;
+                                // console.log("IDNUM________________________");
+                                // this.byId("Tree").sticky(true);
 
                                 dfnumber = _dfnumber[that.widgetno - 1];
                                 if (dfnumber.length > 0) {
@@ -732,7 +751,9 @@
                                     var nodeid_1 = [];
                                     var bu_1 = [];
                                     var gan_1 = [];
-
+                                    
+                                    this.getView().byId("Tree").getItems()[3].setBolcked(true);
+                                    
                                     for (var i = 0; i < dfnumber.length; i++) {
                                         this.byId("Tree").getItems()[dfnumber[i]].setSelected(true);
                                         var snode = that.default[i];
@@ -768,26 +789,34 @@
                                 _setModeInfo[that.widgetno] = 0;
                             }
 
+                            // $('.sapMIBar, .sapMListHdr').css('background-color', 'white');
+                            // $('.sapMTreeItemBaseChildren').css('cursor', 'not-allowed');
+                            // $('.sapMListItems ').css('pointer-events', 'none');
+                            // $('.sapMTreeItemBaseChildren').addClass("disablebutton");
+                            // $('Tree').css('max-height','550 px');
+                            // $('.scrollbar-hidden::-webkit-scrollbar').css('display','none');
+                            // var z = 0;
 
-                            // for (var j = 0; j < 3; j++) {
-                                
-                            //     // sap.ui.getCore().byId(this.byId("Tree").getItems()[j].$().find('.sapMCb').attr('id')).setEnabled(false);
-                            //     this.byId("Tree").getItems()[j].$().css('color', 'lightgrey');
-                            //     this.byId("Tree").getItems()[j].$().css('pointer-events', 'none');
+                            // for(var z=0; z<100; z++){
+                                // $('#__item'+z+'__xmlview11--Tree-0').css({ "pointer-events": "none","color": "lightgray"});
+                                // $('#__item28-__xmlview1--Tree-0').css({ "pointer-events": "none","color": "lightgray"});
+                                // $('#__item28-__xmlview1--Tree-4').css({ "pointer-events": "none","color": "lightgray"});
+                                // $('#__item28-__xmlview1--Tree-0').css({ "pointer-events": "none","color": "lightgray"});
+                                // $('#__item28-__xmlview1--Tree-1').css({ "pointer-events": "none","color": "lightgray"});
+                                // $('#__item32-__xmlview1--Tree-1').css({ "pointer-events": "none","color": "lightgray"});
+                                // $('#__item32-__xmlview1--Tree-2').css({ "pointer-events": "none","color": "lightgray"});
+                                // $('#__item32-__xmlview1--Tree-4').css({ "pointer-events": "none","color": "lightgray"});
+                                // $('#__item32-__xmlview1--Tree-0').css({ "pointer-events": "none","color": "lightgray"});
+                                // $('#__item60-__xmlview1--Tree-1').css({ "pointer-events": "none","color": "lightgray"});
+                                // $('#__item60-__xmlview1--Tree-2').css({ "pointer-events": "none","color": "lightgray"});
+                                // $('#__item60-__xmlview1--Tree-4').css({ "pointer-events": "none","color": "lightgray"});
+                            // }
+                        
+                           
+
                             
-                            // }  
-
-                            // $('.sapMTreeItemBase').css({ "background-color": "transparent", "font-weight": fbi, "font-family": fst, "color": fc, "font-size": fs + "px" });
-                            // console.log("Aaaaaaaaaaaaaaaaaa");
-                            // $('.sapMTreeItemBase , .sapMSTI').css({ "background-color": "transparent"});
-                            // $('.sapMLIB ').css({ "border-bottom": "0px solid #e5e5e5" });
-                            // $('.sapMIBar ').css({ "background-color": "transparent" });
-                            // $('.sapMTreeItemBase:hover').css({ "background-color": "Lightgray", "font-weight": "bold", "font-family": fst });
-                            // $('.sapMSltLabel ').css({"background-color": "transparent", "font-style":"normal", "font-family": "cambria"});
-                            // $('.sapMListHdr, .sapMListHdrTBar').css({"background-color": "transparent", "font-weight":"bold", "font-family": "Arial"});
                         },
 
-                        /*-------------------------- OnSelect Event for Tree Hierarchy at Runtime ------------------------------------- */
                         onSelect: function (oEvent) {
 
                             var listselected = [];

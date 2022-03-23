@@ -1,0 +1,70 @@
+/* .customColor [aria-level='1']
+{
+    background-color: khaki !important;
+} */
+/* :root {
+    --ct-bg: rgb(255, 0, 0);
+ } */
+
+ /* .sapUiBody { background-color: red !important;  
+           background: red !important; 
+         }
+         .Color1 { background-color: red !important;  
+            background: red !important; 
+          }
+          li { background-color: red !important;  
+            background: red !important; 
+          } 
+
+          #__item28-__xmlview1--Tree-0 { background: red !important; } */
+
+.colorMe{
+     background-color: rgb(39, 156, 202); 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-variant:inherit ;
+}          
+
+/* #sapBiExpTreeNode{background-color: red !important;} 
+
+#Tree{background: red !important;} 
+#oView{background: red !important;}  */
+
+/* .sapEpmUiIconCircle1 {background-color:#155cc7 !important;} */
+/* .sapThemeHighlight-asBackgroundColor {background:#000000 !important;} */
+/* .colorMe {background-color: red;} */
+
+/* .sapBiExpTree{overflow-x:hidden;overflow-y:auto;position:relative}
+.sapBiExpTree .sapMCb.sapMCbHasLabel:focus:before{border:none!important}
+.sapBiExpTreeNode{white-space:nowrap;height:25px;line-height:25px;padding-left:4px;position:relative;cursor:pointer;display:flex;flex-direction:row;flex-wrap:nowrap}
+body[theming]
+ 
+/* .sapBiExpTreeNodeText{display:block;flex-grow:0;flex-shrink:1;text-align:left;white-space:nowrap;position:relative;width:100%;font-size:.875rem;color:#333;text-overflow:ellipsis;padding-right:3px;vertical-align:middle;overflow:hidden} */
+/* body[theming] */
+/* .sapBiExpTreeNodeText{font-size:var(--sapFontSize);color:var(--sapList_TextColor)} */
+/* .sapBiExpTreeNodeAnnotationText{display:block;flex-grow:1;flex-shrink:0;overflow:hidden;padding-left:5px;padding-right:4px;text-align:right;text-overflow:ellipsis;white-space:nowrap;font-size:10px;color:#333;vertical-align:middle} */
+/* body[theming]
+ .sapBiExpTreeNodeAnnotationText{color:var(--sapList_TextColor)}
+ .sapBiExpTreeNodeStatusIcon{font-size:16px;display:block;padding-left:3px;padding-right:5px;flex-grow:0;flex-shrink:0;color:#58595b}
+ .sapBiExpTreeNodeTextDisabled{opacity:.5}
+ .sapBiExpTreeNodeCollapsed,.sapBiExpTreeNodeDummyExpandedIcon,.sapBiExpTreeNodeExpanded{margin-left:-15px;margin-right:8px;margin-top:1px;font-style:normal!important;cursor:pointer!important;font-size:12px;color:#fd0000;line-height:inherit} */
+ /* body[theming] 
+ .sapBiExpTreeNodeCollapsed,body[theming] 
+ .sapBiExpTreeNodeDummyExpandedIcon,body[theming] 
+ .sapBiExpTreeNodeExpanded{color:var(--sapButton_TextColor)}
+ .sapBiExpTreeNodeCollapsed{transform:rotate(-90deg)}
+ .sapBiExpTreeNodeDummyExpandedIcon{visibility:hidden}
+ .sapBiExpTreeNode:not(.sapBiExpTreeNodeSelected):hover{background-color:#000000}body[theming] 
+ .sapBiExpTreeNode:not(.sapBiExpTreeNodeSelected):hover{background-color:var(--sapList_Hover_Background)} */
+ /* .sapBiExpTreeNodeSelected{background-color:#0080ff}body[theming]  */
+ /* .sapBiExpTreeNodeSelected{background-color:var(--sapList_SelectionBackgroundColor)} */
+ /* .sapBiExpTreeNodeSelected:hover{background-color:#db5019} */
+ /* .sapBiExpTreeWindow{position:absolute;top:0;left:0;right:0;bottom:0}
+ .sapBiExpScrollSizer{visibility:hidden;float:left} */
+ /* .sapBiExpTreeNodeIndent{display:block;flex-grow:0;flex-shrink:0;vertical-align:top;height:25px;padding-right:5px} */
+ /* .sapBiExpTreeNodeLvl0{width:10px}.sapBiExpTreeNodeLvl1{width:20px}.sapBiExpTreeNodeLvl2{width:30px}
+ .sapBiExpTreeNodeLvl3{width:40px}
+ .sapBiExpTreeNodeLvl4{width:50px} */
+ /* .sapBiExpTreeNodeNoHoverState.sapBiExpTreeNode:not(.sapBiExpTreeNodeSelected):hover{background-color:#fff;cursor:default} */
+ /* .sapEpmUiGlobalSearchResultGroupHeader{height:20px;padding:10px} */
+

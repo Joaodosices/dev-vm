@@ -1,8 +1,4 @@
 (function () {
-
-    /*--------------------------------------------------------------------------------------------------------------- */
-    /*--------------------------  Global Variable Declaration  ------------------------------------- */
-
     let _shadowRoot;
     let div;
     let widgetName;
@@ -16,27 +12,23 @@
     var Ar = [];
     let _filternode = [];
     let _filtervalue = [];
-    let _filterinfo = [];
+    let _filterinfo= [];
     let _setModeInfo = [1, 1, 1];
     let _dfnumber = [];
     let _dfdesc = [];
     let _BuilderPanel = [];
     let _dfF1 = [];
     let _dfF2 = [];
-    let IDNum = [3, 3, 3];
-    let IDNum1 = [0, 0, 0];
-    let _FontStyle = [];
+    let IDNum = 0;
 
     /*--------------------------------------------------------------------------------------------------------------- */
     /*--------------------------  Start: Template Creation  ------------------------------------- */
 
     let tmpl = document.createElement("template");
-    tmpl.innerHTML = `<div id="root"></div> `;
-    // tmpl.innerHTML = `<div id="root"></div> `;
+    tmpl.innerHTML = ` `;
 
     /*--------------------------  End: Template Creation  ------------------------------------- */
     /*--------------------------------------------------------------------------------------------------------------- */
-
 
     /*--------------------------------------------------------------------------------------------------------------- */
     /*--------------------------Start: Main Class  ------------------------------------- */
@@ -48,7 +40,6 @@
 
             _shadowRoot = this.attachShadow({ mode: "open" });
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
-            // _shadowRoot.getElementById("root");
 
             this._export_settings = {};
 
@@ -105,7 +96,7 @@
             }));
         }
 
-        /*-------------------------- Get Set property for data return method  ------------------------------------- */
+        // Get Set property for data return method
         get SelectedChild() {
             return this._export_settings.SelectedChild;
         }
@@ -204,9 +195,9 @@
         // console.log(TI);
         var TD = that.TEXTDEC_col;
         // console.log(TD);
-
+        
         var a = changedProperties.setdata;
-
+    
         var rowData = [[], [], [], [], [], [], [], []];
 
         // Level wise Node Distrubution
@@ -242,8 +233,7 @@
             }
         }
 
-        /*-------------------------- Node Hierarchy Creation based on Paren-Child Relations  ------------------------------------- */
-        /*-------------------------- Local Variable Declaration  ------------------------------------- */
+        //Node Hierarchy Creation based on Paren-Child Relations
         var data = [];
         var count = 0;
         var filternode = [];
@@ -257,12 +247,8 @@
         var F2 = that.Field2_Name;
         var dfF1 = [];
         var dfF2 = [];
-        var FontStyle = [that.fstyle, that.fsize, that.fbi, that.fcolor]
-        _FontStyle[that.widgetno] = FontStyle;
-        console.log(that.widgetno);
-        console.log(_FontStyle);
 
-        /*-------------------------- Check and Set Separator  ------------------------------------- */
+        // Check and Set Separator
         if (that.Separator) {
             _BuilderPanel[that.widgetno] = { Separator: that.Separator, Display: that.Display, Show_Display: that.Show_Display };
             var spart = that.Separator;
@@ -281,8 +267,7 @@
                 var nodeIdDec0 = nodeid0 + " " + spart + " " + nodedec0;
                 var selectionnode0 = { nodedec: nodedec0, nodeid: nodeid0, nodeIdDec: nodeIdDec0 };
                 var node0 = { nodedec: nodedec0, nodeid: nodeid0, nodeIdDec: nodeIdDec0, text: selectionnode0[Selection] };
-
-                /*-------------------------- Field Mapping for Return Data    ------------------------------------- */
+                // Field Mapping for Return Data      
                 if (F1) {
                     node0[F1] = rowData[0][a][F1].id;
                 }
@@ -584,7 +569,7 @@
 
                                                                         var otherinfo7 = {
                                                                             LEVEL: rowData[7][h][LL].id,
-                                                                            PARENTID: rowData[7][h][PI].id,
+                                                                            PARENTID: rowData[7][h][PI].id, 
                                                                             NODEID: rowData[7][h][NI].id,
                                                                             PTDEC: rowData[6][g][TD].id,
                                                                             PTID: rowData[6][g][TI].id,
@@ -597,7 +582,7 @@
                                                                         filtervalue.push(child7);
                                                                         count++;
 
-
+                                                                        
 
                                                                     }
                                                                 }
@@ -616,7 +601,7 @@
 
                                                                 var otherinfo6 = {
                                                                     LEVEL: rowData[6][g][LL].id,
-                                                                    PARENTID: rowData[6][g][PI].id,
+                                                                    PARENTID: rowData[6][g][PI].id, 
                                                                     NODEID: rowData[6][g][NI].id,
                                                                     PTDEC: rowData[5][f][TD].id,
                                                                     PTID: rowData[5][f][TI].id,
@@ -646,16 +631,16 @@
                                                         }
 
                                                         var otherinfo5 = {
-                                                            LEVEL: rowData[5][f][LL].id,
-                                                            PARENTID: rowData[5][f][PI].id,
-                                                            NODEID: rowData[5][f][NI].id,
-                                                            PTDEC: rowData[4][e][TD].id,
-                                                            PTID: rowData[4][e][TI].id,
-                                                            GRANULARITY: rowData[5][f].GRANULARITY.id,
-                                                            BU: rowData[5][f].BU.id
-                                                        }
+                                                                    LEVEL: rowData[5][f][LL].id,
+                                                                    PARENTID: rowData[5][f][PI].id, 
+                                                                    NODEID: rowData[5][f][NI].id,
+                                                                    PTDEC: rowData[4][e][TD].id,
+                                                                    PTID: rowData[4][e][TI].id,
+                                                                    GRANULARITY: rowData[5][f].GRANULARITY.id,
+                                                                    BU: rowData[5][f].BU.id
+                                                                }
 
-                                                        filterinfo.push(otherinfo5);
+                                                                filterinfo.push(otherinfo5);
 
                                                         filternode.push(nodeid5);
                                                         filtervalue.push(child5);
@@ -676,7 +661,7 @@
 
                                                 var otherinfo4 = {
                                                     LEVEL: rowData[4][e][LL].id,
-                                                    PARENTID: rowData[4][e][PI].id,
+                                                    PARENTID: rowData[4][e][PI].id, 
                                                     NODEID: rowData[4][e][NI].id,
                                                     PTDEC: rowData[3][d][TD].id,
                                                     PTID: rowData[3][d][TI].id,
@@ -705,7 +690,7 @@
 
                                         var otherinfo3 = {
                                             LEVEL: rowData[3][d][LL].id,
-                                            PARENTID: rowData[3][d][PI].id,
+                                            PARENTID: rowData[3][d][PI].id, 
                                             NODEID: rowData[3][d][NI].id,
                                             PTDEC: rowData[2][c][TD].id,
                                             PTID: rowData[2][c][TI].id,
@@ -733,7 +718,7 @@
 
                                 var otherinfo2 = {
                                     LEVEL: rowData[2][c][LL].id,
-                                    PARENTID: rowData[2][c][PI].id,
+                                    PARENTID: rowData[2][c][PI].id, 
                                     NODEID: rowData[2][c][NI].id,
                                     PTDEC: rowData[1][b][TD].id,
                                     PTID: rowData[1][b][TI].id,
@@ -760,7 +745,7 @@
 
                         var otherinfo1 = {
                             LEVEL: rowData[1][b][LL].id,
-                            PARENTID: rowData[1][b][PI].id,
+                            PARENTID: rowData[1][b][PI].id, 
                             NODEID: rowData[1][b][NI].id,
                             PTDEC: rowData[0][a][TD].id,
                             PTID: rowData[0][a][TI].id,
@@ -769,7 +754,7 @@
                         }
 
                         filterinfo.push(otherinfo1);
-
+                        
                         filternode.push(nodeid1);
                         filtervalue.push(child1);
                         count++;
@@ -785,7 +770,7 @@
 
                 var otherinfo0 = {
                     LEVEL: rowData[0][a][LL].id,
-                    PARENTID: rowData[0][a][PI].id,
+                    PARENTID: rowData[0][a][PI].id, 
                     NODEID: rowData[0][a][NI].id,
                     PTDEC: "root",
                     PTID: "root",
@@ -813,7 +798,6 @@
             _dfF1[that.widgetno] = dfF1;
             _dfF2[that.widgetno] = dfF2;
 
-
         }
 
         /*--------------------------------------------------------------------------------------------------------------- */
@@ -824,7 +808,7 @@
 
         div.slot = "content_" + widgetName;
 
-        /*--------------------------  Set Display to Chosse ID,DEC,ID-DEC at Runtime ------------------------------------- */
+        //Set Display to Chosse ID,DEC,ID-DEC at Runtime
         if (that.Show_Display === "Yes") {
             var Selelect_List = '<Select width="45%" selectedKey="' + changedProperties.Display + '"  change="handleSelectChange"> <items> <core:Item key="nodeid" text="ID" /> <core:Item key="nodedec" text="DESCRIPTION" /> <core:Item key="nodeIdDec" text="ID-DESCRIPTION" /> </items></Select>'
             var WD = `45%`;
@@ -837,7 +821,7 @@
         let div0 = document.createElement('div');
 
         //Div Tree Structure
-        div0.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m">  <Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect"  includeItemInSelection="true" updateFinished="onDefaultSelction" > <headerToolbar> <OverflowToolbar> ' + Selelect_List + ' <Input  width="' + WD + '" placeholder="Type to search" value="{search/query}" liveChange="onLiveChange" /> </OverflowToolbar> </headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>'
+        div0.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m">  <Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect"  includeItemInSelection="true" updateFinished="onDefaultSelction" > <headerToolbar> <OverflowToolbar> ' + Selelect_List + ' <SearchField  width="' + WD + '" value="{search>/query}" liveChange=".onLiveChange"/> </OverflowToolbar> </headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>'
         _shadowRoot.appendChild(div0);
 
         if (that._firstConnection === 1) {
@@ -859,9 +843,9 @@
         sap.ui.getCore().attachInit(function () {
             "use strict";
 
+            
 
-            /*-------------------------- Controller Fucntion ------------------------------------- */
-
+            //### Controller ###
             sap.ui.define(['sap/ui/core/mvc/Controller',
                 'sap/ui/model/json/JSONModel'],
 
@@ -871,40 +855,38 @@
                     var PageController = Controller.extend("myView.Template", {
                         onInit: function (event) {
 
-                            if (IDNum1[that.widgetno] > 0) {
-
-                                 /*-------------------------- Check Widgetno. for Custom Widget xmlView coordination ------------------------------------- */
-                                switch (that.widgetno) {
-                                    case 1:
-                                        if (sap.ui.getCore().byId("__xmlview1--Tree").getSelectedItems().length > 0) {
-                                            sap.ui.getCore().byId("__xmlview1--Tree").removeSelections();
-                                        }
-                                        break;
-                                    case 2:
-                                        if (sap.ui.getCore().byId("__xmlview2--Tree").getSelectedItems().length > 0) {
-                                            sap.ui.getCore().byId("__xmlview2--Tree").removeSelections();
-                                        }
-                                        break;
-                                    case 3:
-                                        if (sap.ui.getCore().byId("__xmlview3--Tree").getSelectedItems().length > 0) {
-                                            sap.ui.getCore().byId("__xmlview3--Tree").removeSelections();
-                                        }
-                                        break;
-                                    case 4:
-                                        if (sap.ui.getCore().byId("__xmlview4--Tree").getSelectedItems().length > 0) {
-                                            sap.ui.getCore().byId("__xmlview4--Tree").removeSelections();
-                                        }
-                                        break;
-                                }
+                            if(IDNum > 1){
+                            // Check Widgetno. for Custom Widget xmlView coordination
+                            switch (that.widgetno) {
+                                case 1:
+                                    if (sap.ui.getCore().byId("__xmlview1--Tree").getSelectedItems().length > 0) {
+                                        sap.ui.getCore().byId("__xmlview1--Tree").removeSelections();
+                                    }
+                                    break;
+                                case 2:
+                                    if (sap.ui.getCore().byId("__xmlview2--Tree").getSelectedItems().length > 0) {
+                                        sap.ui.getCore().byId("__xmlview2--Tree").removeSelections();
+                                    }
+                                    break;
+                                case 3:
+                                    if (sap.ui.getCore().byId("__xmlview3--Tree").getSelectedItems().length > 0) {
+                                        sap.ui.getCore().byId("__xmlview3--Tree").removeSelections();
+                                    }
+                                    break;
+                                case 4:
+                                    if (sap.ui.getCore().byId("__xmlview4--Tree").getSelectedItems().length > 0) {
+                                        sap.ui.getCore().byId("__xmlview4--Tree").removeSelections();
+                                    }
+                                    break;
                             }
-                            IDNum1[that.widgetno] += 1;
+                        }
 
-                            /*-------------------------- Data assigned to Model For Tree Structure ------------------------------------- */
-                             var oModel = new JSONModel(data);
+                            //Data assigned to Model For Tree Structure
+                            var oModel = new JSONModel(data);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
                         },
 
-                        /*-------------------------- Live Search for SearchField  ------------------------------------- */
+                        // Live Search for SearchField 
                         onLiveChange: function (event) {
                             const query = event.getParameter("newValue").trim();
                             this.byId("Tree").getBinding("items").filter(query ? new sap.ui.model.Filter({
@@ -915,21 +897,15 @@
                             this.byId("Tree").expandToLevel(9999);
                         },
 
-                        /*-------------------------- DefaultSelection at OnInitialization ------------------------------------- */
+                        // DefaultSelection at OnInitialization
                         onDefaultSelction: function (event) {
 
-                            if (IDNum[that.widgetno]) {
-                                this.byId("Tree").setMode(that.Selection_Type);
-                                this.byId("Tree").expandToLevel(9999);
-
-                                IDNum[that.widgetno] -= 1;
-
-                            }
+                            this.byId("Tree").expandToLevel(9999);
 
                             if (that.widgetName && that.Selection_Type && _setModeInfo[that.widgetno]) {
 
-                                // this.byId("Tree").setMode(that.Selection_Type);
-
+                                this.byId("Tree").setMode(that.Selection_Type);
+                                
                                 dfnumber = _dfnumber[that.widgetno - 1];
 
                                 filterinfo = _filterinfo[that.widgetno - 1];
@@ -941,11 +917,9 @@
                                 var listselecteddec = [];
                                 var ptextid = [];
                                 var ptextdec = [];
-
-
-
                                 for (var i = 0; i < dfnumber.length; i++) {
                                     this.byId("Tree").getItems()[dfnumber[i]].setSelected(true);
+
                                     var snode = that.default[i];
                                     listselected.push(snode);
                                     listselecteddec.push(dfdesc[i]);
@@ -958,6 +932,7 @@
                                         }
                                     }
                                 }
+
                                 _SelectedChild = schild.substr(1, schild.length).split(",");
                                 _SelectedNodeDec = listselecteddec;
                                 _SelectedNode = listselected;
@@ -968,38 +943,22 @@
 
                                 that._firePropertiesChanged();
                                 _setModeInfo[that.widgetno] = 0;
-
-
-                            }
-                            var fbi = _FontStyle[that.widgetno];
-
-                            console.log(fbi);
-
-
-                            // $('.sapMTreeItemBase').css({ "background-color": "transparent", "font-weight": fbi[2], "font-family": fbi[0], "color": fbi[3], "font-size": fbi[1] + "px" });
-                            $('.sapMTreeItemBase').css({ "background-color": "transparent"});
-                            console.log("Bbbbbbbbbbbbbbbbbbb");
-                            $('.sapMTreeItemBase, .sapMIBar').css({ "background-color": "transparent" });
-                            $('.sapMLIB').css({ "border-bottom": "0px solid #e5e5e5" });
-                            $('.sapMIBar').css({ "background-color": "transparent" });
-
-                            // $('.sapMTreeItemBase:hover').css({ "background-color": "Lightgray", "font-weight": "bold"});
-                            // $('.sapMSltLabel ').css({ "background-color": "transparent", "font-style": "normal", "font-family": "cambria" });
-                            // $('.sapMListHdr, .sapMListHdrTBar').css({ "background-color": "transparent", "font-weight": "bold", "font-family": "Arial" });
+                            }                  
                             
-                            // for (var j = 0; j < 3; j++) {
-                                //     if(this.getView().byId("Tree").getItems()[j].mProperties.title =='All_Brands'){
-                                //     sap.ui.getCore().byId(this.byId("Tree").getItems()[j].$().find('.sapMCb').attr('id')).setEnabled(false);
-                                // this.byId("Tree").getItems()[j].$().css({ 'color': 'black', 'pointer-events': 'none', "background-color": "lightblue" });
-                                // this.byId("Tree").getItems()[j].$().css('pointer-events', 'none');
-                            // }
-                            // } 
+                            var fst = that.fstyle;
+                            var fc = that.fcolor;
+                            var fs = that.fsize;
+                            var fbi = that.fbi;
 
-
+                            $('.sapMTreeItemBase').css({"background-color": "red", "font-weight":fbi, "font-family": fst , "color": fc , "font-size": fs+"px"});
+                            $('.sapMLIB ').css({"border-bottom":"0px solid #e5e5e5"});
+                            $('.sapMTreeItemBase:hover').css({"background-color": "Lightgray", "font-weight":"bold", "font-family": fst});
+                            // $('.sapMSltLabel ').css({"background-color": "transparent", "font-style":"normal", "font-family": "cambria"});
+                            // $('.sapMListHdr, .sapMListHdrTBar').css({"background-color": "transparent", "font-weight":"bold", "font-family": "Arial"});
 
                         },
 
-                        /*--------------------------  Set DisplayTitle Node for ID,DEC,ID-DEC ------------------------------------- */
+                        // Set DisplayTitle Node for ID,DEC,ID-DEC
                         handleSelectChange: function (oEvent) {
                             var displaymode = oEvent.getParameter("selectedItem").getKey();
 
@@ -1013,7 +972,7 @@
                             }
                         },
 
-                        /*-------------------------- OnSelect Event for Tree Hierarchy at Runtime ------------------------------------- */
+                        // OnSelect Event for Tree Hierarchy at Runtime
                         onSelect: function (oEvent) {
                             var listselected = [];
                             var listselecteddec = [];
